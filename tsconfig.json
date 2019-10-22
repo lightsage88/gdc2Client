@@ -1,4 +1,7 @@
-{
+{"paths":{
+  "@environment":["./src/environments/environment.ts"]
+},
+
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",

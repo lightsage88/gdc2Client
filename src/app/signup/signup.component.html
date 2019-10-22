@@ -1,0 +1,21 @@
+<form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+  <label>Username:
+    <input placeholder="Enter your username" name="username" [(ngModel)]="model.username" type="text" required/>
+  </label>
+  <label>Password:
+    <input type="password" name="password" [(ngModel)]="model.password"  required/>
+  </label>
+  <label>Re-Type Password:
+    <input type="password" name="passwordConfirm" [(ngModel)]="model.passwordConfirm" required/>
+  </label>
+  <label>First Name:
+    <input type="text" name="firstName" [(ngModel)]="model.firstName"  required />
+  </label>
+  <label>Last Name:
+    <input type="text" name="lastName" [(ngModel)]="model.lastName"  required />
+  </label>
+  <label>Birthday:
+    <input type="text" [(ngModel)]="model.birthday"  name="birthday">
+  </label>
+  <button type="submit" [disabled]="loginFormIsDisabled">LOGIN</button>
+</form>

@@ -1,18 +1,61 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-
+import { NgRedux, NgReduxModule, DevToolsExtension } from '@angular-redux/store';
+import thunk  from 'redux-thunk';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { AboutComponent } from './about/about.component';
+import { AccountComponent } from './account/account.component';
+import { LoginComponent } from './login/login.component';
+import { KennelComponent } from './kennel/kennel.component';
+import { SearchComponent } from './search/search.component';
+import { CatComponent } from './cat/cat.component';
+import { PageNotFoundComponent } from './pageNotFound/pageNotFound.component';
+
+import { gdcClientState, rootReducer, INITIAL_STATE  } from './store';
+import { CatResultsComponent } from './cat-results/cat-results.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+   declarations: [
+      AppComponent,
+      HeaderComponent,
+      AboutComponent,
+      AccountComponent,
+      LoginComponent,
+      KennelComponent,
+      SearchComponent,
+      CatComponent,
+      PageNotFoundComponent,
+      CatResultsComponent,
+      SignupComponent
+   ],
+   imports: [
+      NgReduxModule,
+      BrowserModule,
+      FormsModule,
+      AppRoutingModule
+   ],
+   providers: [],
+   bootstrap: [
+      AppComponent
+   ]
 })
-export class AppModule { }
+export class AppModule {
+   constructor(private ngRedux: NgRedux<gdcClientState>,
+               private devTools: DevToolsExtension){
+      let enhancers = [];
+      if(devTools.isEnabled()){
+         enhancers = [...enhancers, devTools.enhancer()];
+      }
+
+      this.ngRedux.configureStore(
+         rootReducer,
+         INITIAL_STATE,
+         [thunk],
+         enhancers
+      )
+   }
+ }
