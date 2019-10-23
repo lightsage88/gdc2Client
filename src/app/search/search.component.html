@@ -1,3 +1,45 @@
-<p>
-  search works!
-</p>
+
+<form (ngSubmit)="onSubmit(catSeekingForm)" #catSeekingForm="ngForm" >
+<h2>Coats</h2>
+<div class="checkbox" *ngFor="let coat of catCoats | async" #coatsDiv >
+  <label>
+    <input type="checkbox" name="catCoat" value={{coat}} [checked]="coatsDiv.checked" (change)="coatsDiv.checked = !coatsDiv.checked" ngModel #coats="ngModel"/>
+    {{coat}}
+  </label>
+</div>
+
+<h2>Gender</h2>
+<div class="checkbox" *ngFor="let gender of catGenders | async">
+  <label>
+    <input type="checkbox" name="catGender" value="gender">
+    {{gender}}
+  </label>
+</div>
+
+<h2>Age</h2>
+<div class="checkbox" *ngFor="let age of catAges">
+  <label>
+    <input type="checkbox" name="catAge" value="age">
+    {{age}}
+  </label>
+</div>
+
+<h2>Breed</h2>
+<select placeholder=" ">
+  <option *ngFor="let breed of catBreeds | async" value="breed">
+    {{breed}}
+  </option>
+</select>
+
+<h2>Color</h2>
+<select>
+  <option *ngFor="let color of catColors | async" value="color">
+    {{color}}
+  </option>
+</select>
+<button type="submit">SEEK</button>
+
+</form>
+
+
+

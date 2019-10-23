@@ -24,7 +24,8 @@ export class SignupComponent implements OnInit {
   onSubmit(){
     console.log(this.model);
     console.log('you pressed on Submit');
-    this.ngRedux.dispatch({type: SIGN_UP(this.model)})
+    // this.ngRedux.dispatch({type: SIGN_UP(this.model)});
+    this.ngRedux.dispatch(SIGN_UP(this.model));
   }
 
 }

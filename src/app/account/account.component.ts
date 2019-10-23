@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {NgRedux, select} from '@angular-redux/store';
+import {gdcClientState} from '../store';
+
 
 @Component({
   selector: 'app-account',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountComponent implements OnInit {
 
-  constructor() { }
+  @select() user: any;
+  @select() lastUpdate;
+  constructor(private ngRedux: NgRedux<gdcClientState>) { }
 
-  ngOnInit() {
+  ngOnInit() {  
+    console.log(this.user, this.lastUpdate)
   }
 
 }
