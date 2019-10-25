@@ -1,0 +1,20 @@
+<div class="catCard">
+  <button (click)="placeCatInKennel()" [disabled]="catData.status !== 'adoptable'" >Place in wish(ker) list</button>
+
+  <h1>{{catData.name}}</h1>
+  <p>{{catData.description}}</p>
+  <img [src]="catData.photos.length > 0 ?   catData.photos[0].small :''  " />
+    <ul>
+      <li>
+        COLOR: {{catData.colors.primary}}
+      </li>
+      <li>
+        AGE: {{catData.age}}
+      </li>
+      <li>
+        GENDER: {{catData.gender}}
+      </li>
+     
+    </ul>
+
+</div>

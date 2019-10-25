@@ -1,5 +1,4 @@
-<ul>
-  <!-- <li *ngFor="let cat of catResults">
-    {{cat}}
-  </li> -->
-</ul>
+
+  <div *ngFor="let cat of catResults">
+    <app-cat-card [catData]="cat"></app-cat-card>
+  </div>

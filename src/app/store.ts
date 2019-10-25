@@ -55,14 +55,22 @@ export const INITIAL_STATE: gdcClientState = {
 export function rootReducer(state, action): gdcClientState {
     switch(action.type){
         case ADD_CAT:
+            let userCats = state.user.cats;
             console.log('you sent over Add Sample Cat');
             console.log(action.payload);
-            action.cat.id = state.user.cats.length + 1;
+            // action.payload.id = state.user.cats.length + 1;
+            // return Object.assign({}, state, {
+            //     cats: state.user.cats.concat(Object.assign({}, action.cat)),
+            //     lastUpdate: new Date()
+            // })
+            userCats.push(action.payload);
             return Object.assign({}, state, {
-                cats: state.user.cats.concat(Object.assign({}, action.cat)),
-                lastUpdate: new Date()
+                ...state,
+                user: {
+                    ...state.user,
+                    cats: userCats
+                }
             })
-            
             
         case LOG_IN_SUCCESS:
             console.log('you are using login success');

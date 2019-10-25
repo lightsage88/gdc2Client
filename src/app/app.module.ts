@@ -19,6 +19,7 @@ import { PageNotFoundComponent } from './pageNotFound/pageNotFound.component';
 import { gdcClientState, rootReducer, INITIAL_STATE  } from './store';
 import { CatResultsComponent } from './cat-results/cat-results.component';
 import { SignupComponent } from './signup/signup.component';
+import { CatCardComponent } from './cat-card/cat-card.component';
 
 @NgModule({
    declarations: [
@@ -32,7 +33,8 @@ import { SignupComponent } from './signup/signup.component';
       CatComponent,
       PageNotFoundComponent,
       CatResultsComponent,
-      SignupComponent
+      SignupComponent,
+      CatCardComponent
    ],
    imports: [
       ReactiveFormsModule,

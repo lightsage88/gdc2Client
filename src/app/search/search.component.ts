@@ -5,6 +5,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { gdcClientState } from '../store';
 import {Output} from '@angular/core';
 import { Observable } from 'rxjs';
+import {SearchResult} from '../search-result';
 
 @Component({
   selector: 'app-search',
@@ -15,7 +16,7 @@ export class SearchComponent implements OnInit {
   constructor(private petFinderService: PetFinderService, private ngRedux: NgRedux<gdcClientState>) { }
   
   //use @OUTPUT to feed queried cats into search-results child component :)
-catResults;
+  catResults:SearchResult[];
   
   catBreeds;
   catCoats;
@@ -46,7 +47,6 @@ catResults;
     this.catGenders = this.petFinderService.getCatColorCoatSex().then(res => res.genders);
     
 
-    this.petFinderService.tutorialFunction();
   }
 
 

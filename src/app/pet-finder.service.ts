@@ -7,6 +7,7 @@ import {catchError, tap, map} from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { SearchResult } from './search-result';
 
+
 @Injectable({
   providedIn: 'root' 
 })
@@ -149,26 +150,18 @@ getCatColorCoatSex(){
   //   } 
 
 
-  seekCats(cattributes):any {
-    console.log(cattributes);
+  seekCats(cattributes):Observable<SearchResult[]> {
     
 
   let {breed, coat, color, gender, age} = cattributes;
 
   let body = {breed, coat, color, gender, age};
-  console.log(body);
 
-   return this.http.post(`${environment.API_BASE_URL}/api/cats/seekCats`,body)
-  //  .pipe(
-  //    map(response => JSON.parse(response))
-  //  )
+   return this.http.post<SearchResult[]>(`${environment.API_BASE_URL}/api/cats/seekCats`,body)
+  
   }
 
-    tutorialFunction () {
-      this.http.post(this.url, this.postData ).toPromise().then((data:any) => {
-        console.log(data);
-      })
-    }
+    
      
 }
 
