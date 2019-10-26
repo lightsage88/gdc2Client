@@ -4,6 +4,7 @@ import {addCat} from '../actions';
 import { gdcClientState } from '../store';
 import { User } from '../user';
 import { Observable } from 'rxjs';
+import { DatabaseService } from '../database.service';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { Observable } from 'rxjs';
 })
 export class CatCardComponent implements OnInit {
 
-  constructor(private ngRedux: NgRedux<gdcClientState>) { }
+  constructor(private ngRedux: NgRedux<gdcClientState>, private dbService: DatabaseService) { }
   @Input() catData: {};
   @select() user$ : Observable<User>;
   user: User;
@@ -27,6 +28,9 @@ export class CatCardComponent implements OnInit {
     console.log(this.user.cats);
     //We want to dispatch an action where we send this catData to our database
     //and put it in the cats array of our User model.
+
+    this.dbService.addCatToDB(this.catData);
+
 
     this.ngRedux.dispatch(addCat(this.catData));
 

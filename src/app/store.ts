@@ -1,5 +1,5 @@
 import { User } from './user'; 
-import {ADD_CAT, LOG_IN_SUCCESS, LOG_OUT} from './actions';
+import {ADD_CAT, LOG_IN_SUCCESS, LOG_OUT, REFRESH_STATE, SET_AUTH_TOKEN} from './actions';
 
 export interface gdcClientState {
     user: User;
@@ -52,6 +52,7 @@ export const INITIAL_STATE: gdcClientState = {
     lastUpdate: null
 }
 
+
 export function rootReducer(state, action): gdcClientState {
     switch(action.type){
         case ADD_CAT:
@@ -91,6 +92,32 @@ export function rootReducer(state, action): gdcClientState {
         case LOG_OUT:     
             console.log('you are logging out');
             return Object.assign({}, state, INITIAL_STATE);
+            
+        case REFRESH_STATE:
+            console.log('dispatching refreshing of state from reducer');
+            console.log(action.payload);
+            return Object.assign({}, state, {
+                ...state,
+                user: {
+                    username: action.payload.username,
+                    loggedIn: true,
+                    firstName: action.payload.firstName,
+                    lastName: action.payload.lastName,
+                    birthday: action.payload.birthday,
+                    cats: action.payload.cats
+                }
+            })    
+        
+        case SET_AUTH_TOKEN:
+            console.log('settingAuth token into state');
+            return Object.assign({}, state, {
+                ...state,
+                user: {
+                    ...state.user,
+                    authToken: action.payload
+
+                }
+            })   
 
     }
     return state;

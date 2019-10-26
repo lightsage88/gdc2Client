@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit {
   logOut() {
     console.log(this.user);
     this.ngRedux.dispatch(logout());
+    localStorage.clear();
   }
 
 }

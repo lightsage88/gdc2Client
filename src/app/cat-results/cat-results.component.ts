@@ -1,5 +1,7 @@
 import { Component, OnInit, OnChanges, SimpleChange } from '@angular/core';
 import { Input } from '@angular/core';
+import { select } from '@angular-redux/store';
+import { gdcClientState } from '../store';
 
 @Component({
   selector: 'app-cat-results',
@@ -16,21 +18,6 @@ export class CatResultsComponent implements OnInit {
     console.log(this.catResults);
   }
 
-  ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
-    
-    let log: string[] = [];
-    for (let propName in changes) {
-      let changedProp = changes[propName];
-      let to = JSON.stringify(changedProp.currentValue);
-      if (changedProp.isFirstChange()) {
-        log.push(`Initial value of ${propName} set to ${to}`);
-      } else {
-        let from = JSON.stringify(changedProp.previousValue);
-        log.push(`${propName} changed from ${from} to ${to}`);
-      }
-    }
-    this.changeLog.push(log.join(', '));
-    console.log(this.changeLog);
-  }
+ 
 
 }
