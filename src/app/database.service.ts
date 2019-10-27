@@ -26,6 +26,17 @@ ngOnInit() {
   this.user$.subscribe(user => this.username = user.username);
 
 }
+
+  refreshStateViaToken() {
+     let authToken = localStorage.getItem('authToken');
+    if(authToken) {
+        //if we have an authToken, that means we have already signed in. So we want to 
+        //get our user info back.
+
+        this.ngRedux.dispatch<any>(refreshStateWithToken(authToken));
+    }
+ 
+  }
   
   obtainAndRefreshTokenAndState(){
 
@@ -84,9 +95,66 @@ ngOnInit() {
     
   }
 
-  removeCatFromDB(thing) {
-console.log(thing);
+  removeCatFromDB(catID) {
     console.log(this.user.username);
     console.log('placeholder for Rmovecat fromd b');
+    return axios({
+      url: `${environment.API_BASE_URL}/api/users/removeCat`,
+      method: "POST",
+      headers: {
+        accept: "application/json"
+      },
+      data: {
+        catID,
+        username: this.user.username
+      }
+    })
+    .then(response => {
+      console.log(response);
+      this.refreshStateViaToken();
+    })
+    .catch(err => console.error(err));
+  }
+
+  attemptPasswordUpdate(username, object) {
+    let {password, newPW} = object;
+    console.log(password, newPW)
+    return axios({
+      url: `${environment.API_BASE_URL}/api/users/changePassword`,
+      method: "POST",
+      headers: {
+        "accept":"application/json"
+      },
+      data: {
+        username,
+        "oldPW": password,
+        "newPW": newPW
+      }
+    }) 
+    .then(response => {
+      console.log(response)
+    })
+    .catch(err => console.error(err))
+  }
+
+  attemptAccountUpdateDB(username, userInfo, confirmInfo) {
+    let { firstName, lastName, birthday } = userInfo;
+    let {password, confirm} = confirmInfo;
+    // console.log(firstName, lastName, birthday, pwInput, confirmInput);
+    return axios({
+      url: `${environment.API_BASE_URL}/api/users/changeAccountDetails`,
+      method: "POST",
+      headers: {
+        accept: "application/json"
+      },
+      data: {
+        firstName, lastName, birthday, password, confirm, username
+      }
+
+    })
+    .then(response => {
+      console.log(response)
+    })
+    .catch(err => console.error(err));
   }
 }

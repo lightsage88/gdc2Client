@@ -1,1 +1,60 @@
-<p>{{user.username | async}}</p>
+<!-- <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+        <label>Username:
+          <input placeholder="Enter your username" name="username" type="text" [(ngModel)]="userCredentials.username" required/>
+        </label>
+        <label>Password:
+          <input type="password" name="password" [(ngModel)]="userCredentials.password" required>
+        </label>
+        <button type="submit" [disabled]="loginFormIsDisabled">LOGIN</button>
+      </form> -->
+      
+
+<div>
+    <h1>ACCOUNT</h1>
+
+        <form  (ngSubmit)="onSubmit()" #accountForm="ngForm" >
+        <label>First Name:
+            <input placeholder={{user.firstName}} name="firstName" type="text" [(ngModel)]="userAccountInput.firstName" />
+        </label>
+
+        <label>Last Name:
+                <input placeholder={{user.lastName}} name="lastName" type="text" [(ngModel)]="userAccountInput.lastName" />
+        </label>
+
+        <label>Birthday:
+                <p>need a calendar</p>
+                <input placeholder={{user.birthday}}/>
+        </label>
+        <button type="submit">Submit</button>
+    </form>
+
+
+    <div>
+        <h3>Change Password</h3> 
+        <form (ngSubmit)="attemptPasswordChange()" >
+            <label>Current Password
+                <input type="password" name="password" [(ngModel)]="passwordChangeObject.password" />
+            </label>
+            <label>New Password
+                <input type="password" name="passwordConfirm" [(ngModel)]="passwordChangeObject.newPW">
+            </label>
+            <button type="submit">Change</button>
+        </form>   
+    </div>
+
+    <div *ngIf="displayModal == true">
+        <h3>Do you really want to update?</h3>
+        <h5>If so, you'll need to enter your password</h5>
+        <form (ngSubmit)="submitPasswordConfirm()">
+            <label>Password
+                <input type="password" name="password" [(ngModel)]="confirmationInput.password"/>
+            </label>
+            <label>Confirm Password
+                <input type="password" name="confirm" [(ngModel)]="confirmationInput.confirm"/>
+            </label> 
+            <button type="submit">Meow!</button>           
+        </form>
+    </div>
+
+
+</div>

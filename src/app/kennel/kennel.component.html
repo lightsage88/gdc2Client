@@ -1,3 +1,6 @@
 <div *ngFor="let cat of kennelCats">
   <app-kennel-card [catData]="cat" ></app-kennel-card>
 </div>
+<div *ngIf="kennelCats.length == 0">
+  <h3>Oh dear, no cats here!</h3>
+</div>

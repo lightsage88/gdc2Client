@@ -5,6 +5,7 @@
   <p>{{catData.description}}</p>
   <img [src]="catData.photos.length > 0 ?   catData.photos[0].small :''  " />
     <ul>
+      <li>BREED: {{catData.breeds.primary}}</li>
       <li>
         COLOR: {{catData.colors.primary}}
       </li>
