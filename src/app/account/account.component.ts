@@ -6,6 +6,7 @@ import {Observable} from 'rxjs';
 import { User } from '../user';
 import { DatabaseService } from '../database.service';
 import { Data } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @Component({

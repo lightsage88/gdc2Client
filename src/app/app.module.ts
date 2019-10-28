@@ -36,7 +36,8 @@ import { KennelCardComponent } from './kennel-card/kennel-card.component';
       CatResultsComponent,
       SignupComponent,
       CatCardComponent,
-      KennelCardComponent
+      KennelCardComponent,
+      CatComponent
    ],
    imports: [
       ReactiveFormsModule,
