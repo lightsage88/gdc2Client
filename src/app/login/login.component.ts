@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgRedux } from '@angular-redux/store';
 import { gdcClientState } from '../store';
-import {LOG_IN} from '../actions';
+import {logIn} from '../actions';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
     console.log(this.userCredentials);
-    this.ngRedux.dispatch(LOG_IN(this.userCredentials));
+    this.ngRedux.dispatch(logIn(this.userCredentials));
   }
 
 

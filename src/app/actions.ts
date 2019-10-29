@@ -64,7 +64,7 @@ export const refreshState = (payload) => ({
     //but for now it let's me continue with development. Will research more later.
 
 
-    export const LOG_IN = (userCredentials): any => dispatch => {
+    export const logIn = (userCredentials): any => dispatch => {
         console.log('dispatching LOG_IN');
         let {username, password} = userCredentials;
         return axios({
@@ -112,7 +112,7 @@ export const refreshState = (payload) => ({
             if(password === passwordConfirm){
                 payload.password = password;
             }
-            dispatch(LOG_IN(payload));
+            dispatch(logIn(payload));
 
         })
         .catch(err => console.error(err));
