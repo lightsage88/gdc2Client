@@ -20,7 +20,7 @@ script:
 deploy:
   provider: heroku
   api_key:
-    secure: P2aky+kwntVqUatwlg/ZUG2lZ9tpHoQroMsyp6Hu7TjrpEJZ4hFYks6TCaM0Ss+e7IdS8DYf7A2hwgrQ60ZeEz0E+3fdqgwqq+BJAKmGIdVptQG4nMGKvCh+1rg9ASyvLZlmtlGUI9MUHR1ODzLfW+03VbKGdBHgiblDye4du4Mlv3UYnXKukwMSvSlv7wweNnERVdSELnZYjx/jClG15jNcVPj/tehVUjpbaJAq7BzbA74fIlUGyRozJJ48SlW5CPiRjZbQfCSrSMtA3zIrY9sEvIHajG7bRBNCQdUtpRf1qCzNZi3UsHNyvemmAwMQC77TyIJkG4XCzgZuUFX1Scv52GRD0wNjb1VyepnjxUOxGKK645dxt611hMGlJVhpwhWb9zkQM332BV5HVz+fB67OUzrwwe+O7nR3ASrqQAHl2PEgkriil2+cxn0Q+UFmidHxIn7CKhAbIM80Bq9eT52mCmNFO26JCRgTfXBHEiEujJ1k0REun03vvp3nGkGkEa6etwggpmotTTG55ndesdH2/JgyxRXWsb6z4RFaHyDjRxYUxprJ46FG6+3B8FMAwGMBC6Jkz/QJOhFgF3lPivZsPKeEGAcEWZq1HZaY/4MwZMs1JJ0WzQUS2vn8isLbGEbZ2yyAbJtykY+naKDnmmq52IlpQJr0kUKG79kKpDY=
+    secure: 72b5fa63-feab-44ff-9bbe-a89a63393855
   app: fast-brushlands-35777
   on:
     repo: lightsage88/gdc2Client
