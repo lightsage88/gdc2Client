@@ -1,7 +1,7 @@
 
 <form (ngSubmit)="onSubmit()" [formGroup]="queryForm"  >
 <h2>Coats</h2>
-<select placeholder=" " value={{coat}} formControlName="coat">
+<select placeholder=" "  formControlName="coat">
     <option value="">==ANY==</option>
     <option *ngFor="let coat of catCoats | async" value={{coat}} >
       {{coat}}

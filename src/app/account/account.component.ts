@@ -19,18 +19,18 @@ export class AccountComponent implements OnInit {
   @select() user$: Observable<User>;
   @select() lastUpdate;
   user: any;
-  userAccountInput: {} = {
+  userAccountInput: Object = {
     firstName: '',
     lastName: '',
     birthday: '',
     username: ""
   }; 
-  confirmationInput: {} = {
+  confirmationInput: Object = {
     password: '',
     confirm: ''
   };
 
-  passwordChangeObject: {} = {
+  passwordChangeObject: Object = {
     password: '',
     newPW: ''
   };

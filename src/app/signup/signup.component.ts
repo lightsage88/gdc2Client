@@ -11,7 +11,9 @@ import { gdcClientState } from '../store';
 export class SignupComponent implements OnInit {
   constructor(private ngRedux: NgRedux<gdcClientState>) { }
 
-  model: {} = {};
+  model: Object = {
+    
+  };
 
   ngOnInit() {
 

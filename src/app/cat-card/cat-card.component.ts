@@ -15,7 +15,7 @@ import { DatabaseService } from '../database.service';
 export class CatCardComponent implements OnInit {
 
   constructor(private ngRedux: NgRedux<gdcClientState>, private dbService: DatabaseService) { }
-  @Input() catData: {};
+  @Input() catData: Object;
   @select() user$ : Observable<User>;
   user: User;
   ngOnInit() {
