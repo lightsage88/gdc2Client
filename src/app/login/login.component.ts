@@ -9,7 +9,7 @@ import {logIn} from '../actions';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  userCredentials: Object = {
+  userCredentials: any = {
     username: null,
     password: null
 
