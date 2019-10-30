@@ -39,12 +39,13 @@ export class AccountComponent implements OnInit {
 
   constructor(private ngRedux: NgRedux<gdcClientState>, private dbService: DatabaseService) {
 
-    this.user$.subscribe(user => this.user = user);
 
    }
 
   ngOnInit() {  
     console.log(this.user, this.lastUpdate, this.userAccountInput);
+    this.user$.subscribe(user => this.user = user);
+
   }
 
   attemptAccountUpdate() {

@@ -16,12 +16,12 @@ describe('LoginComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ LoginComponent ],
       imports: [ NgReduxTestingModule, FormsModule, ReactiveFormsModule]
+      
     })
     .compileComponents();
   }));
- 
-  
 
+  
   it('should create', async(() => {
     const fixture = TestBed.createComponent(LoginComponent);
     fixture.detectChanges();
@@ -55,6 +55,8 @@ describe('LoginComponent', () => {
     expect(spy).not.toHaveBeenCalledWith({
       type: LOG_IN_SUCCESS,
     })
+    //Here we have figured how to test that dispatch was called at all.
+    expect(spy).toHaveBeenCalled();
   }))
 
 

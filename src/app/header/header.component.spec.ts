@@ -66,7 +66,6 @@ describe('HeaderComponent', () => {
     const headerComponent = fixture.componentInstance;
     headerComponent.logOut();
     expect(localStorage.getItem('authToken')).toBe(null);
-
   }));
 
   // it('has NgRedux injected', async(()=>{

@@ -23,9 +23,7 @@ export class CatCardComponent implements OnInit {
   }
 
   placeCatInKennel() {
-    console.log(this.catData);
-    console.log(this.user);
-    console.log(this.user.cats);
+  
     //We want to dispatch an action where we send this catData to our database
     //and put it in the cats array of our User model.
 

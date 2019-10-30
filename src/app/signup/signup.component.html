@@ -1,21 +1,21 @@
 <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
-  <label>Username:
-    <input placeholder="Enter your username" name="username" [(ngModel)]="model.username" type="text" required/>
+  <label id="usernameLabel">Username:
+    <input id="usernameInput"  placeholder="Enter your username" name="username" [(ngModel)]="model.username" type="text" required/>
   </label>
-  <label>Password:
-    <input type="password" name="password" [(ngModel)]="model.password"  required/>
+  <label id="passwordLabel">Password:
+    <input  id="passwordInput" type="password" name="password" [(ngModel)]="model.password" placeholder="Enter your password" required/>
   </label>
-  <label>Re-Type Password:
-    <input type="password" name="passwordConfirm" [(ngModel)]="model.passwordConfirm" required/>
+  <label id="retypePasswordLabel">Re-Type Password:
+    <input id="confirmInput" placeholder="Re-enter your password" type="password" name="passwordConfirm" [(ngModel)]="model.passwordConfirm" required/>
   </label>
-  <label>First Name:
-    <input type="text" name="firstName" [(ngModel)]="model.firstName"  required />
+  <label id="firstNameLabel">First Name:
+    <input  id="firstNameInput" placeholder="Enter your first name" type="text" name="firstName" [(ngModel)]="model.firstName"  required />
   </label>
-  <label>Last Name:
-    <input type="text" name="lastName" [(ngModel)]="model.lastName"  required />
+  <label id="lastNameLabel">Last Name:
+    <input id="lastNameInput"  placeholder="Enter your last name" type="text" name="lastName" [(ngModel)]="model.lastName"  required />
   </label>
-  <label>Birthday:
-    <input type="text" [(ngModel)]="model.birthday"  name="birthday">
+  <label id="birthdayLabel">Birthday:
+    <input id="birthdayInput" placeholder="When's your birthday?" type="text" [(ngModel)]="model.birthday"  name="birthday">
   </label>
-  <button type="submit" [disabled]="loginFormIsDisabled">LOGIN</button>
+  <button  id="signupSubmitButton" type="submit" [disabled]="loginFormIsDisabled">LOGIN</button>
 </form>

@@ -2,11 +2,13 @@
 
 import { TestBed, async, inject } from '@angular/core/testing';
 import { PetFinderService } from './pet-finder.service';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { NgReduxTestingModule } from '@angular-redux/store/testing';
 describe('Service: PetFinder', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [PetFinderService]
+      providers: [PetFinderService],
+      imports: [HttpClientTestingModule, NgReduxTestingModule]
     });
   });
 

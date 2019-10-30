@@ -89,8 +89,8 @@ export const refreshState = (payload) => ({
         .catch(err => console.error(err));
     }
 
-    export const SIGN_UP = (newUser): any => dispatch => {
-        console.log('dispatching SIGN_UP');
+    export const signUp = (newUser): any => dispatch => {
+        console.log('dispatching signUp');
         let {username, password, passwordConfirm, firstName, lastName, birthday} = newUser;
         return axios({
             url: `${environment.API_BASE_URL}/api/users/signup`,
@@ -116,7 +116,7 @@ export const refreshState = (payload) => ({
 
         })
         .catch(err => console.error(err));
-    }
+    } 
 
     export const refreshStateWithToken = (token) => dispatch => {
         return axios({
