@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {PetFinderService} from '../pet-finder.service';
-import { NgRedux } from '@angular-redux/store';
+import {AccountService} from '../account.service';
+import {DatabaseService} from '../database.service';
+import { NgRedux, select } from '@angular-redux/store';
 import { FormGroup, FormControl } from '@angular/forms';
 import { gdcClientState } from '../store';
 import {Output} from '@angular/core';
@@ -11,13 +13,19 @@ import {SearchResult} from '../search-result';
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
-}) 
+})
 export class SearchComponent implements OnInit {
-  constructor(private petFinderService: PetFinderService, private ngRedux: NgRedux<gdcClientState>) { }
-  
+  constructor(private petFinderService: PetFinderService,
+    private ngRedux: NgRedux<gdcClientState>,
+    private accountService: AccountService,
+    ) { }
+
+  @select() user$;
+  user: any
+
   //use @OUTPUT to feed queried cats into search-results child component :)
   catResults:SearchResult[];
-  
+
   catBreeds;
   catCoats;
   catColors;
@@ -36,21 +44,26 @@ export class SearchComponent implements OnInit {
     gender: new FormControl(''),
     age: new FormControl('')
   });
-  
+
 
 
   ngOnInit() {
     this.catBreeds = this.petFinderService.getCatBreeds();
-    this.catCoats = this.petFinderService.getCatColorCoatSex().then(res =>  
+    this.catCoats = this.petFinderService.getCatColorCoatSex().then(res =>
       res.coats );
     this.catColors = this.petFinderService.getCatColorCoatSex().then(res => res.colors);
     this.catGenders = this.petFinderService.getCatColorCoatSex().then(res => res.genders);
-    
+    this.user$.subscribe(user => this.user = user);
+
 
   }
 
 
+
+
+
   onSubmit() {
+
     console.log(this.catResults);
    console.log('pressed ngSubmit for form');
    console.log(this.queryForm.value);
@@ -66,10 +79,10 @@ export class SearchComponent implements OnInit {
     });
 
    console.log(this.catResults);
- 
+
   }
-  
- 
+
+
 
 
 

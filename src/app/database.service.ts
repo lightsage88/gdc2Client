@@ -24,25 +24,30 @@ httpOptions = {
 }
 ngOnInit() {
   this.user$.subscribe(user => this.username = user.username);
+  this.user$.subscribe(user => this.user = user);
 
+
+  console.log(this.user);
 }
+
+
 
   refreshStateViaToken() {
      let authToken = localStorage.getItem('authToken');
     if(authToken) {
-        //if we have an authToken, that means we have already signed in. So we want to 
+        //if we have an authToken, that means we have already signed in. So we want to
         //get our user info back.
 
         this.ngRedux.dispatch<any>(refreshStateWithToken(authToken));
     }
- 
+
   }
-  
+
   obtainAndRefreshTokenAndState(){
 
     let authToken = localStorage.getItem('authToken');
     if(authToken) {
-        //if we have an authToken, that means we have already signed in. So we want to 
+        //if we have an authToken, that means we have already signed in. So we want to
         //get our user info back.
 
         this.ngRedux.dispatch<any>(refreshStateWithToken(authToken));
@@ -64,7 +69,7 @@ ngOnInit() {
         this.ngRedux.dispatch<any>(refreshAuthToken(authToken, this.user))
 
     }
-  } 
+  }
 
 
   addCatToDB(cat) {
@@ -75,7 +80,7 @@ ngOnInit() {
     console.log(cat);
     // return this.http.post<any>(`${environment.API_BASE_URL}/api/users/addCat`, cat, this.httpOptions)
     // .pipe(
-    
+
     // )
     return axios({
       url: `${environment.API_BASE_URL}/api/users/addCat`,
@@ -92,7 +97,7 @@ ngOnInit() {
       console.log(response)
     })
     .catch(err => console.error(err));
-    
+
   }
 
   removeCatFromDB(catID) {
@@ -130,7 +135,7 @@ ngOnInit() {
         "oldPW": password,
         "newPW": newPW
       }
-    }) 
+    })
     .then(response => {
       console.log(response)
     })
@@ -138,7 +143,7 @@ ngOnInit() {
   }
 
   attemptAccountUpdateDB(username, userInfo, confirmInfo) {
-    let { firstName, lastName, birthday } = userInfo;
+    let { firstName, lastName, birthday, zodiacCombo } = userInfo;
     let {password, confirm} = confirmInfo;
     // console.log(firstName, lastName, birthday, pwInput, confirmInput);
     return axios({
@@ -148,7 +153,7 @@ ngOnInit() {
         accept: "application/json"
       },
       data: {
-        firstName, lastName, birthday, password, confirm, username
+        firstName, lastName, birthday, password, confirm, username, zodiacCombo
       }
 
     })

@@ -24,6 +24,8 @@
     </option>
   </select>
 
+
+
 <h2>Breed</h2>
 <select placeholder=" " formControlName="breed">
     <option value="">==ANY==</option>
@@ -31,6 +33,8 @@
     {{breed}}
   </option>
 </select>
+<aside>{{user.zodiacCombo.catType ? "According to our cat overlords, people with your zodiac sign would pair best with a " + user.zodiacCombo.catType + " cat!": "murr"}}</aside>
+
 
 <h2>Color</h2>
 <select formControlName="color">
@@ -49,4 +53,3 @@
 </div> -->
 
 <app-cat-results [catResults]="catResults" ></app-cat-results>
-

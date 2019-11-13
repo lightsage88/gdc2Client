@@ -1,0 +1,16 @@
+#kennelBanner {
+  text-align: center;
+  color: #Fb3640;
+  background: #2b4570;
+}
+
+
+
+#kennelBanner h2 {
+  font-family: "Leckerli One", cursive;
+}
+
+#kennelBanner aside {
+  font-family: "Spinnaker", sans-serif;
+  font-style: italic;
+}

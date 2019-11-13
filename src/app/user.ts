@@ -8,7 +8,8 @@ export interface User {
     firstName: string;
     lastName: string;
     birthday: string;
-    cats: Cat[]
+    cats: Cat[];
+    zodiacCombo: Object
 }
 
 
@@ -18,7 +19,7 @@ export interface User {
 //     unique: true
 // },
 // password: {
-//     type:String, 
+//     type:String,
 //     required: true
 // },
 // authToken: {
@@ -28,12 +29,12 @@ export interface User {
 //     type: Boolean
 // },
 // firstName: {
-//     type: String, 
+//     type: String,
 //     required: true,
 //     default: ''
 // },
 // lastName: {
-//     type: String, 
+//     type: String,
 //     required: true,
 //     default: ''
 // },

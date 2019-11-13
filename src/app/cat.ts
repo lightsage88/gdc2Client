@@ -11,3 +11,4 @@ export interface Cat {
     status: string;
     thumbnail: string;
 }
+ 

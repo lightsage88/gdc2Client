@@ -1,3 +1,33 @@
 .kennelCard {
     border: dotted red 3px;
 }
+
+.kennelCard h5 {
+  font-family: "Leckerli One", cursive;
+}
+
+.kennelCard strong {
+  font-family: "Spinnaker", sans-serif;
+}
+
+p.buttonPWrapper {
+  text-align: center;
+}
+
+button.kennelCardToggleButton {
+  width: -webkit-fill-available;
+  max-width: 70vw;
+}
+
+button.kennelCardToggleButton h5 {
+  font-family: "Leckerli One", cursive;
+}
+
+/* .kennelCard {
+  width: auto;
+  max-width: 70vw;
+} */
+
+.kennelCardDeleteButton {
+  float:right;
+}

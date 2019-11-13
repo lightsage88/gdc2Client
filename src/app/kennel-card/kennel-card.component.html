@@ -1,4 +1,4 @@
-<div class="kennelCard">
+<!-- <div class="kennelCard">
   <button (click)="removeCat()">X</button>
   <h2>{{catData.name}}</h2>
   <img [src]="catData.photos && catData.photos.length > 0 ? catData.photos[0].small : '' "/>
@@ -12,5 +12,36 @@
   </h3>
   <p>{{catData.description}}</p>
 
-  
+
+</div> -->
+
+<p class="buttonPWrapper">
+  <button type="button" class="btn btn-outline-primary kennelCardToggleButton" (click)="isCollapsed = !isCollapsed"
+          [attr.aria-expanded]="!isCollapsed" attr.aria-controls={{buttonDataTarget}}>
+          <img [src]="catData.photos && catData.photos.length > 0 ? catData.photos[0].small : '' "/>
+          <h5>{{catData.name}}</h5>
+  </button>
+</p>
+<div id={{buttonDataTarget}} [ngbCollapse]="isCollapsed">
+  <div class="card kennelCard">
+    <div class="card-body">
+      <span *ngIf='catData.status == "adoptable"' class="badge badge-success">Available</span>
+      <span *ngIf='catData.status !== "adoptable"' class="bade badge-danger">Unavailable</span>
+      <button class="btn btn-outline-danger kennelCardDeleteButton" (click)="removeCat()">X</button>
+
+      <section>
+        <h5>Details</h5>
+      <p><strong>Breed: </strong>{{catBreed}}</p>
+      <p><strong>Age: </strong>{{catData.age}}</p>
+      <p><strong>Gender: </strong>{{catData.gender}}</p>
+      <p><strong>Color: </strong>{{catColor}}</p>
+      </section>
+      <section>
+        <h5>Description</h5>
+        <p>{{catData.description}}</p>
+      </section>
+
+
+    </div>
+  </div>
 </div>

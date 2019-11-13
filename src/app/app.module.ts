@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import thunk  from 'redux-thunk';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AboutComponent } from './about/about.component';
@@ -15,6 +16,7 @@ import { KennelComponent } from './kennel/kennel.component';
 import { SearchComponent } from './search/search.component';
 import { CatComponent } from './cat/cat.component';
 import { PageNotFoundComponent } from './pageNotFound/pageNotFound.component';
+
 
 import { gdcClientState, rootReducer, INITIAL_STATE  } from './store';
 import { CatResultsComponent } from './cat-results/cat-results.component';
@@ -45,7 +47,8 @@ import { KennelCardComponent } from './kennel-card/kennel-card.component';
       HttpClientModule,
       BrowserModule,
       FormsModule,
-      AppRoutingModule
+      AppRoutingModule,
+      NgbModule
    ],
    providers: [],
    bootstrap: [

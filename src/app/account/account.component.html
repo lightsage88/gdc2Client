@@ -1,5 +1,5 @@
 
-      
+
 
 <div>
     <h1>ACCOUNT</h1>
@@ -15,14 +15,16 @@
 
         <label>Birthday:
                 <p>need a calendar</p>
-                <input placeholder={{user.birthday}}/>
+                <!-- <input placeholder={{user.birthday.month}}/> -->
+                <input id="birthdayInput" (click)="d.toggle()" placeholder="{{user.birthday.month}}/{{user.birthday.day}}" type="text" [(ngModel)]="userAccountInput.birthday" ngbDatepicker #d="ngbDatepicker"  name="birthday">
+
         </label>
         <button type="submit">Submit</button>
     </form>
 
 
     <div>
-        <h3>Change Password</h3> 
+        <h3>Change Password</h3>
         <form (ngSubmit)="attemptPasswordChange()" >
             <label>Current Password
                 <input type="password" name="password" [(ngModel)]="passwordChangeObject.password" />
@@ -31,7 +33,7 @@
                 <input type="password" name="passwordConfirm" [(ngModel)]="passwordChangeObject.newPW">
             </label>
             <button type="submit">Change</button>
-        </form>   
+        </form>
     </div>
 
     <div *ngIf="displayModal == true">
@@ -43,8 +45,8 @@
             </label>
             <label>Confirm Password
                 <input type="password" name="confirm" [(ngModel)]="confirmationInput.confirm"/>
-            </label> 
-            <button type="submit">Meow!</button>           
+            </label>
+            <button type="submit">Meow!</button>
         </form>
     </div>
 

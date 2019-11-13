@@ -15,7 +15,8 @@
     <input id="lastNameInput"  placeholder="Enter your last name" type="text" name="lastName" [(ngModel)]="model.lastName"  required />
   </label>
   <label id="birthdayLabel">Birthday:
-    <input id="birthdayInput" placeholder="When's your birthday?" type="text" [(ngModel)]="model.birthday"  name="birthday">
+    <input id="birthdayInput" (click)="d.toggle()" placeholder="When's your birthday?" type="text" [(ngModel)]="model.birthday" ngbDatepicker #d="ngbDatepicker"  name="birthday">
   </label>
   <button  id="signupSubmitButton" type="submit" >LOGIN</button>
+  <!-- <ngb-datepicker #d></ngb-datepicker> -->
 </form>
