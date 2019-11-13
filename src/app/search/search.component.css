@@ -1,0 +1,41 @@
+#searchBanner {
+  color: #E3F2FD;
+  text-align: center;
+  background: #9A7AA0;
+}
+
+
+
+#searchBanner h2 {
+  font-family: "Leckerli One", cursive;
+}
+
+#searchBanner aside {
+  font-family: "Spinnaker", sans-serif;
+}
+
+form {
+  text-align: center;
+}
+
+
+form h2 {
+  font-family: "Leckerli One", cursive;
+}
+
+form select {
+  font-family: "Spinnaker", sans-serif;
+  text-align: center;
+  width:90%;
+}
+
+
+
+form aside {
+  font-family: "Spinakker", sans-serif;
+}
+
+#searchButton {
+  margin-top: 2vw;
+  font-family: "Leckerli One", cursive;
+}

@@ -5,6 +5,7 @@ import { gdcClientState } from '../store';
 import { User } from '../user';
 import { Observable } from 'rxjs';
 import { DatabaseService } from '../database.service';
+import {AppToastService} from '../app-toast-service.service';
 
 
 @Component({
@@ -14,16 +15,19 @@ import { DatabaseService } from '../database.service';
 })
 export class CatCardComponent implements OnInit {
 
-  constructor(private ngRedux: NgRedux<gdcClientState>, private dbService: DatabaseService) { }
+  constructor(private ngRedux: NgRedux<gdcClientState>,
+    private dbService: DatabaseService,
+  private toastService: AppToastService) { }
   @Input() catData: any;
   @select() user$ : Observable<User>;
   user: User;
+  showToast: boolean = true;
   ngOnInit() {
     this.user$.subscribe(user => this.user = user);
   }
 
   placeCatInKennel() {
-  
+
     //We want to dispatch an action where we send this catData to our database
     //and put it in the cats array of our User model.
 
@@ -31,8 +35,10 @@ export class CatCardComponent implements OnInit {
 
 
     this.ngRedux.dispatch(addCat(this.catData));
+    let toastBody = this.catData.name + " was added to the kennel!";
+    this.toastService.show('Grab Dat Cat', toastBody, {classname: 'bg-success text-light', delay: 5000});
 
-   
+
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {DatabaseService} from '../database.service';
+import {AppToastService} from '../app-toast-service.service';
 
 @Component({
   selector: 'app-kennel-card',
@@ -14,7 +15,7 @@ export class KennelCardComponent implements OnInit {
   catBreed: any;
   catColor: any;
 
-  constructor(private dbService: DatabaseService) { }
+  constructor(private dbService: DatabaseService, private toastService: AppToastService) { }
 
   ngOnInit() {
     console.log('balaclava');
@@ -29,6 +30,10 @@ export class KennelCardComponent implements OnInit {
   removeCat(): void {
     console.log(this.catData);
     this.dbService.removeCatFromDB(this.catData.id)
+    let toastBody = this.catData.name + " was removed.";
+
+    this.toastService.show('Grab Dat Cat', toastBody, {classname: 'bg-danger text-light', delay: 5000});
+    // this.toastService.remove()
   }
 
 

@@ -23,6 +23,7 @@ import { CatResultsComponent } from './cat-results/cat-results.component';
 import { SignupComponent } from './signup/signup.component';
 import { CatCardComponent } from './cat-card/cat-card.component';
 import { KennelCardComponent } from './kennel-card/kennel-card.component';
+import { AppToastsComponent } from './app-toasts-component/app-toasts-component.component';
 
 @NgModule({
    declarations: [
@@ -39,7 +40,8 @@ import { KennelCardComponent } from './kennel-card/kennel-card.component';
       SignupComponent,
       CatCardComponent,
       KennelCardComponent,
-      CatComponent
+      CatComponent,
+      AppToastsComponent
    ],
    imports: [
       ReactiveFormsModule,

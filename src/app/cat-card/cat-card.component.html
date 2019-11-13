@@ -1,21 +1,21 @@
 <div class="catCard">
-  <button (click)="placeCatInKennel()" [disabled]="catData.status !== 'adoptable'" >Place in wish(ker) list</button>
-
-  <h1>{{catData.name}}</h1>
-  <p>{{catData.description}}</p>
+  <h1 class="catCardName">{{catData.name}}</h1>
   <img [src]="catData.photos.length > 0 ?   catData.photos[0].small :''  " />
-    <ul>
-      <li>BREED: {{catData.breeds.primary}}</li>
+  <p class="catCardDescription">{{catData.description}}</p>
+    <h5 class="catCardDetails">Details</h5>
+    <ul class="catCardUL">
+      <li><strong>BREED:</strong> {{catData.breeds.primary}}</li>
       <li>
-        COLOR: {{catData.colors.primary}}
+        <strong>COLOR:</strong> {{catData.colors.primary}}
       </li>
       <li>
-        AGE: {{catData.age}}
+        <strong>AGE:</strong> {{catData.age}}
       </li>
       <li>
-        GENDER: {{catData.gender}}
+        <strong>GENDER:</strong> {{catData.gender}}
       </li>
-     
+
     </ul>
+    <button class="btn btn-success catCardButton" (click)="placeCatInKennel()" [disabled]="catData.status !== 'adoptable'" >Place in wish(ker) list</button>
 
 </div>
