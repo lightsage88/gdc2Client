@@ -107,7 +107,8 @@ export function rootReducer(state, action): gdcClientState {
                     lastName: action.payload.lastName,
                     birthday: action.payload.birthday,
                     cats: action.payload.cats,
-                    zodiacCombo: action.payload.zodiacCombo
+                    zodiacCombo: action.payload.zodiacCombo,
+                    authToken: action.payload.authToken
                 }
             })
 

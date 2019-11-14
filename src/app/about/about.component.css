@@ -1,0 +1,45 @@
+h3 {
+  font-family: "Spinnaker", sans-serif;
+  text-align: center;
+}
+
+#aboutBanner {
+  text-align: center;
+  background: #faa275;
+}
+
+#aboutBanner h2 {
+  font-family:"Leckerli One",cursive;
+  color:#9a7aa0;
+
+}
+#aboutBanner aside {
+  font-family: "Spinnaker", sans-serif;
+  color:#9a7aa0;
+}
+
+
+section {
+  border: solid;
+padding: 5vw;
+border-radius: 4vw;
+margin: 3vw;
+border-style: outset;
+}
+
+img {
+  display:block;
+  margin: auto;
+}
+
+#aboutTemplateDiv {
+  padding: 5vw;
+}
+
+@media screen and (min-width: 769px) {
+  div#aboutTemplateDiv {
+    width: auto;
+    max-width: 60vw;
+    margin:auto;
+  }
+}

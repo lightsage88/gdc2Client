@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {PetFinderService} from '../pet-finder.service';
 import {AccountService} from '../account.service';
 import {DatabaseService} from '../database.service';
+import {RouteHelperService} from '../route-helper.service';
 import { NgRedux, select } from '@angular-redux/store';
 import { FormGroup, FormControl } from '@angular/forms';
 import { gdcClientState } from '../store';
@@ -18,6 +19,7 @@ export class SearchComponent implements OnInit {
   constructor(private petFinderService: PetFinderService,
     private ngRedux: NgRedux<gdcClientState>,
     private accountService: AccountService,
+    private routeHelper: RouteHelperService
     ) { }
 
   @select() user$;
@@ -25,6 +27,7 @@ export class SearchComponent implements OnInit {
 
   //use @OUTPUT to feed queried cats into search-results child component :)
   catResults:SearchResult[];
+  // catSuggestion: any;
 
   catBreeds;
   catCoats;
@@ -48,12 +51,14 @@ export class SearchComponent implements OnInit {
 
 
   ngOnInit() {
+    this.routeHelper.bouncer();
     this.catBreeds = this.petFinderService.getCatBreeds();
     this.catCoats = this.petFinderService.getCatColorCoatSex().then(res =>
       res.coats );
     this.catColors = this.petFinderService.getCatColorCoatSex().then(res => res.colors);
     this.catGenders = this.petFinderService.getCatColorCoatSex().then(res => res.genders);
     this.user$.subscribe(user => this.user = user);
+    // this.catSuggestion =   this.user.zodiacCombo.catType ? "According to our cat overlords, people with your zodiac sign would pair best with a " + user.zodiacCombo.catType + " cat!": "N/A"
 
 
   }

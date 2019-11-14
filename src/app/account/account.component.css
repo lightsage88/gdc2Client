@@ -1,0 +1,14 @@
+#accountBanner {
+  background: #fb3640;
+  text-align: center;
+}
+
+#accountBanner h2 {
+  font-family: "Leckerli One",cursive;
+  color: #e3f2fd;
+}
+
+#accountBanner aside {
+  font-family: "Spinnaker", sans-serif;
+  color: #e3f2fd;
+}

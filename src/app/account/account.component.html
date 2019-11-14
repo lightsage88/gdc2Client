@@ -1,41 +1,50 @@
 
+<div class="jumbotron jumbotron-fluid" id="accountBanner">
+  <h2>Account</h2>
+  <aside><strong>Mew</strong> can change your de<strong>-tails</strong> here.</aside>
+</div>
 
 
-<div>
-    <h1>ACCOUNT</h1>
 
-        <form  (ngSubmit)="onSubmit()" #accountForm="ngForm" >
-        <label>First Name:
-            <input placeholder={{user.firstName}} name="firstName" type="text" [(ngModel)]="userAccountInput.firstName" />
-        </label>
+    <form  (ngSubmit)="onSubmit()" #accountForm="ngForm" >
+      <div class="form-group">
+      <label>First Name:
+          <input class="form-control" placeholder={{user.firstName}} name="firstName" type="text" [(ngModel)]="userAccountInput.firstName" />
+      </label>
+      </div>
 
-        <label>Last Name:
-                <input placeholder={{user.lastName}} name="lastName" type="text" [(ngModel)]="userAccountInput.lastName" />
-        </label>
+      <div class="form-group">
+      <label>Last Name:
+              <input class="form-control" placeholder={{user.lastName}} name="lastName" type="text" [(ngModel)]="userAccountInput.lastName" />
+      </label>
+      </div>
+      <div class="form-group">
+      <label>Birthday:
+              <p>need a calendar</p>
+              <!-- <input placeholder={{user.birthday.month}}/> -->
+              <input class="form-control" id="birthdayInput" (click)="d.toggle()" placeholder="{{user.birthday.month}}/{{user.birthday.day}}" type="text" [(ngModel)]="userAccountInput.birthday" ngbDatepicker #d="ngbDatepicker"  name="birthday">
 
-        <label>Birthday:
-                <p>need a calendar</p>
-                <!-- <input placeholder={{user.birthday.month}}/> -->
-                <input id="birthdayInput" (click)="d.toggle()" placeholder="{{user.birthday.month}}/{{user.birthday.day}}" type="text" [(ngModel)]="userAccountInput.birthday" ngbDatepicker #d="ngbDatepicker"  name="birthday">
-
-        </label>
-        <button type="submit">Submit</button>
+      </label>
+      </div>
+      <button class="btn btn-primary" type="submit">Submit</button>
     </form>
 
 
     <div>
         <h3>Change Password</h3>
         <form (ngSubmit)="attemptPasswordChange()" >
+          <div class="form-group">
             <label>Current Password
-                <input type="password" name="password" [(ngModel)]="passwordChangeObject.password" />
+                <input class="form-control" type="password" name="password" [(ngModel)]="passwordChangeObject.password" />
             </label>
             <label>New Password
-                <input type="password" name="passwordConfirm" [(ngModel)]="passwordChangeObject.newPW">
+                <input class="form-control" type="password" name="passwordConfirm" [(ngModel)]="passwordChangeObject.newPW">
             </label>
-            <button type="submit">Change</button>
+            <button class="btn btn-primary" type="submit">Change</button>
+            </div>
         </form>
     </div>
-
+<!-- TODO: Make a modal -->
     <div *ngIf="displayModal == true">
         <h3>Do you really want to update?</h3>
         <h5>If so, you'll need to enter your password</h5>
@@ -49,6 +58,3 @@
             <button type="submit">Meow!</button>
         </form>
     </div>
-
-
-</div>

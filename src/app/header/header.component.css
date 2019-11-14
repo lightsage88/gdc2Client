@@ -6,3 +6,7 @@ nav {
     font-family: 'Leckerli One', cursive;
     color: #2B4570;
 }
+
+#headerUL a {
+    font-family: "Spinnaker", sans-serif;
+}

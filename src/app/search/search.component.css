@@ -39,3 +39,18 @@ form aside {
   margin-top: 2vw;
   font-family: "Leckerli One", cursive;
 }
+
+@media screen and (min-width: 426px) {
+
+  #searchButton {
+    display: block;
+    margin: 2vw auto;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  select {
+    width: auto;
+    max-width: 45%
+  }
+}

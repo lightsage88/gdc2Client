@@ -1,0 +1,44 @@
+#loginBanner {
+  background: #2B4570;
+  text-align: center;
+
+}
+
+#loginBanner h2 {
+  font-family: "Leckerli One", cursive;
+  color: #FB3640;
+
+}
+
+#loginBanner aside {
+  font-family: "Spinnaker", sans-serif;
+  color: #FB3640;
+}
+
+#loginForm {
+  margin:auto 5vw;
+}
+
+#loginForm label {
+  font-family: "Leckerli One", cursive;
+  color: #8F3985;
+}
+
+#loginForm input {
+  font-family: "Spinnaker", sans-serif;
+}
+
+#loginForm button {
+  font-family:"Leckerli One", cursive;
+  display: block;
+  margin: 8vw auto;
+  padding: 5vw;
+}
+
+
+@media screen and (min-width: 426px) {
+  #loginForm button {
+    margin: 5vw auto;
+    padding: 1.5vw;
+  }
+}

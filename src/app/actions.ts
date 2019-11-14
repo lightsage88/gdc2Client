@@ -11,7 +11,7 @@ export const ADD_CAT = 'ADD_CAT';
 export const addCat = (payload) => ({
     type: ADD_CAT,
     payload
-}); 
+});
 
 
 
@@ -52,7 +52,7 @@ export const refreshState = (payload) => ({
     //     .then(response => {
     //         dispatch(refreshCharacters(response.data));
     //         return response
-            
+
     //     })
     //     .catch(err => {
     //         console.error(err);
@@ -85,6 +85,7 @@ export const refreshState = (payload) => ({
             dispatch(storeAuthInfo(response.data));
 
             localStorage.setItem('authToken', response.data.authToken);
+            
         })
         .catch(err => console.error(err));
     }
@@ -116,7 +117,7 @@ export const refreshState = (payload) => ({
 
         })
         .catch(err => console.error(err));
-    } 
+    }
 
     export const refreshStateWithToken = (token) => dispatch => {
         return axios({
@@ -139,7 +140,7 @@ export const refreshState = (payload) => ({
         })
         .catch(err => console.error(err));
 
-        
+
 
     }
 
@@ -173,7 +174,7 @@ export const refreshState = (payload) => ({
                         .then(response => {
                             console.log(response);
                             return response;
-                            
+
                         })
                         .catch(err => console.error(err));
                     }
@@ -188,10 +189,10 @@ export const refreshState = (payload) => ({
     }
 
     export const refreshAuthToken = (token, data) => dispatch => {
-        
-       
 
-        
+
+
+
         return axios({
             url: `${environment.API_BASE_URL}/api/auth/refreshToken`,
             method: "POST",
@@ -214,12 +215,5 @@ export const refreshState = (payload) => ({
 
     }
 
-    
+
     ///Token Business
-
-
-
-   
-
-
-    

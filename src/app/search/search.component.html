@@ -3,7 +3,7 @@
   <aside>Use the <strong>paw</strong>-er of the internet to find a furry friend!</aside>
 </div>
 
-
+<div class="container">
 <form (ngSubmit)="onSubmit()" [formGroup]="queryForm"  >
 <h2>Coats</h2>
 <select placeholder=" "  formControlName="coat">
@@ -38,7 +38,9 @@
     {{breed}}
   </option>
 </select>
-<aside>{{user.zodiacCombo.catType ? "According to our cat overlords, people with your zodiac sign would pair best with a " + user.zodiacCombo.catType + " cat!": "murr"}}</aside>
+
+
+<aside>{{user.zodiacCombo.catType ? "According to our cat overlords, people with your zodiac sign would pair best with a " + user.zodiacCombo.catType + " cat!": "No cat suggestions available"}}</aside>
 
 
 <h2>Color</h2>
@@ -56,5 +58,6 @@
     {{cat.name}}
   </li>
 </div> -->
+</div>
 
 <app-cat-results [catResults]="catResults" ></app-cat-results>

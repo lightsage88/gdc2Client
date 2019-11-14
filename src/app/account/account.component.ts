@@ -7,6 +7,10 @@ import { User } from '../user';
 import { DatabaseService } from '../database.service';
 import { Data } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouteHelperService } from '../route-helper.service';
+
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+
 
 
 @Component({
@@ -24,7 +28,7 @@ export class AccountComponent implements OnInit {
     lastName: '',
     birthday: '',
     username: ""
-  }; 
+  };
   confirmationInput: any = {
     password: '',
     confirm: ''
@@ -37,14 +41,18 @@ export class AccountComponent implements OnInit {
 
   displayModal: boolean = false;
 
-  constructor(private ngRedux: NgRedux<gdcClientState>, private dbService: DatabaseService) {
+  constructor(private ngRedux: NgRedux<gdcClientState>,
+    private dbService: DatabaseService,
+    private routeHelper: RouteHelperService
+  ) {
 
 
    }
 
-  ngOnInit() {  
+  ngOnInit() {
     console.log(this.user, this.lastUpdate, this.userAccountInput);
     this.user$.subscribe(user => this.user = user);
+    this.routeHelper.bouncer();
 
   }
 
@@ -56,7 +64,7 @@ export class AccountComponent implements OnInit {
     this.dbService.attemptAccountUpdateDB(this.user.username, this.userAccountInput, this.confirmationInput);
   }
 
-  
+
 
   onSubmit() {
     this.displayModal = true;
@@ -73,6 +81,6 @@ export class AccountComponent implements OnInit {
     this.dbService.attemptPasswordUpdate(this.user.username,this.passwordChangeObject)
 
   }
-  
+
 
 }

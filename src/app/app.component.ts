@@ -10,7 +10,7 @@ import { DatabaseService } from './database.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'gdc2Client';
@@ -38,7 +38,7 @@ export class AppComponent {
           // // let authToken = this.ngRedux.dispatch<any>(loadAuthToken());
           // let authToken = localStorage.getItem('authToken');
           // if(authToken) {
-          //     //if we have an authToken, that means we have already signed in. So we want to 
+          //     //if we have an authToken, that means we have already signed in. So we want to
           //     //get our user info back.
 
           //     this.ngRedux.dispatch<any>(refreshStateWithToken(authToken));
