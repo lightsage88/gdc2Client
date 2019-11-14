@@ -14,16 +14,13 @@ import {Observable } from 'rxjs';
 })
 export class HeaderComponent implements OnInit {
   @select() user$;
-  loggedIn: any;
+  loggedInStatus: boolean = false;
   constructor(private ngRedux: NgRedux<gdcClientState>,
     private routeHelper: RouteHelperService,
   private toastService: AppToastService) { }
 
   ngOnInit() {
-    this.loggedIn = this.user$.subscribe(user => {
-       this.loggedIn = user.loggedIn;
-      console.log(this.loggedIn);
-    });
+    this.user$.subscribe(user => this.loggedInStatus = user.loggedIn);
 
   }
 
