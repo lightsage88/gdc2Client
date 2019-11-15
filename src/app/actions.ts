@@ -85,7 +85,7 @@ export const refreshState = (payload) => ({
             dispatch(storeAuthInfo(response.data));
 
             localStorage.setItem('authToken', response.data.authToken);
-            
+
         })
         .catch(err => console.error(err));
     }
@@ -119,7 +119,7 @@ export const refreshState = (payload) => ({
         .catch(err => console.error(err));
     }
 
-    export const refreshStateWithToken = (token) => dispatch => {
+    export const refreshStateWithToken = (token):any => dispatch => {
         return axios({
             url: `${environment.API_BASE_URL}/api/users/refreshStateWithToken`,
             method:"POST",

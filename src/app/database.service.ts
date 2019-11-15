@@ -143,9 +143,10 @@ ngOnInit() {
   }
 
   attemptAccountUpdateDB(username, userInfo, confirmInfo) {
+    console.log('attemptAccountUpdateDB running');
     let { firstName, lastName, birthday, zodiacCombo } = userInfo;
     let {password, confirm} = confirmInfo;
-    // console.log(firstName, lastName, birthday, pwInput, confirmInput);
+    console.log(username, userInfo, confirmInfo)
     return axios({
       url: `${environment.API_BASE_URL}/api/users/changeAccountDetails`,
       method: "POST",

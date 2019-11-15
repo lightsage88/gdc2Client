@@ -8,7 +8,7 @@ import { DatabaseService } from '../database.service';
 import { Data } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouteHelperService } from '../route-helper.service';
-
+import {refreshStateWithToken} from '../actions';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -26,7 +26,7 @@ export class AccountComponent implements OnInit {
   userAccountInput: any = {
     firstName: '',
     lastName: '',
-    birthday: '',
+    birthday: Object,
     username: ""
   };
   confirmationInput: any = {
@@ -39,6 +39,8 @@ export class AccountComponent implements OnInit {
     newPW: ''
   };
 
+  authToken: any;
+
   displayModal: boolean = false;
 
   constructor(private ngRedux: NgRedux<gdcClientState>,
@@ -50,11 +52,20 @@ export class AccountComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.dbService.obtainAndRefreshTokenAndState();
+
     console.log(this.user, this.lastUpdate, this.userAccountInput);
     this.user$.subscribe(user => this.user = user);
+    // this.user$.subscribe(user => this.authTokenFromState = user.authToken)
+    this.user$.subscribe(user => this.userAccountInput.birthday = user.birthday);
+
+    this.authToken = localStorage.getItem('authToken');
     this.routeHelper.bouncer();
 
   }
+
+  //create a cat-service to set up the zodiacCombo Client Side for easy updating
+    //use cat-service here to make the zodiacCombo
 
   attemptAccountUpdate() {
     console.log('Here is where we attempt to update the account');
@@ -62,6 +73,9 @@ export class AccountComponent implements OnInit {
     console.log(this.user.username);
     console.log('be sure to add username to this user object');
     this.dbService.attemptAccountUpdateDB(this.user.username, this.userAccountInput, this.confirmationInput);
+    // this.ngRedux.dispatch(refreshStateWithToken(this.authToken));
+
+
   }
 
 
