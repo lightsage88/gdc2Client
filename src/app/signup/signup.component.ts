@@ -15,10 +15,12 @@ export class SignupComponent implements OnInit {
 
   };
 
+  submitDisabled: boolean = true;
+
   ngOnInit() {
 
   }
- 
+
 
   onSubmit(){
     console.log(this.model);

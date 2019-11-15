@@ -6,7 +6,7 @@
 
 
 
-    <form  (ngSubmit)="onSubmit()" #accountForm="ngForm" >
+    <form id="nameBirthdayForm" (ngSubmit)="onSubmit()" #accountForm="ngForm" >
       <div class="form-group">
       <label>First Name:
           <input class="form-control" placeholder={{user.firstName}} name="firstName" type="text" [(ngModel)]="userAccountInput.firstName" />
@@ -30,10 +30,10 @@
     </form>
 
 
-    <div>
+    <div id="secondFormDiv">
         <h3>Change Password</h3>
         <form (ngSubmit)="attemptPasswordChange()" >
-          <div class="form-group">
+          <div id="secondFormFormGroupDiv" class="form-group">
             <label>Current Password
                 <input class="form-control" type="password" name="password" [(ngModel)]="passwordChangeObject.password" />
             </label>
@@ -45,16 +45,18 @@
         </form>
     </div>
 <!-- TODO: Make a modal -->
-    <div *ngIf="displayModal == true">
+    <div id="confirmationDiv" *ngIf="displayModal == true">
         <h3>Do you really want to update?</h3>
         <h5>If so, you'll need to enter your password</h5>
         <form (ngSubmit)="submitPasswordConfirm()">
-            <label>Password
-                <input type="password" name="password" [(ngModel)]="confirmationInput.password"/>
-            </label>
-            <label>Confirm Password
-                <input type="password" name="confirm" [(ngModel)]="confirmationInput.confirm"/>
-            </label>
-            <button type="submit">Meow!</button>
+            <div id="confirmationDivFormGroup" class='form-group'>
+              <label>Password
+                  <input class="form-control" type="password" name="password" [(ngModel)]="confirmationInput.password"/>
+              </label>
+              <label>Confirm Password
+                  <input class="form-control" type="password" name="confirm" [(ngModel)]="confirmationInput.confirm"/>
+              </label>
+              <button class="btn btn-outline-success" type="submit">Meow!</button>
+            </div>
         </form>
     </div>

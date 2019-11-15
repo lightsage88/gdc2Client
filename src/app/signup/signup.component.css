@@ -1,0 +1,22 @@
+form {
+  text-align: center;
+}
+
+label {
+  font-family: "Spinnaker", sans-serif;
+}
+
+#signupBanner{
+  background: #9A7AA0;
+  text-align: center;
+}
+
+#signupBanner h2 {
+  font-family: "Leckerli One", cursive;
+  color: #Faa275;
+}
+
+#signupBanner aside {
+  font-family: "Spinnaker", sans-serif;
+  color: #Faa275;
+}

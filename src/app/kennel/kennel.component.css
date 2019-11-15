@@ -14,3 +14,8 @@
   font-family: "Spinnaker", sans-serif;
   font-style: italic;
 }
+
+#noCatsMessage {
+  text-align: center;
+  font-family:"Leckerli One",cursive;
+}

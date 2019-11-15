@@ -12,3 +12,44 @@
   font-family: "Spinnaker", sans-serif;
   color: #e3f2fd;
 }
+
+
+#nameBirthdayForm {
+  text-align: center;
+}
+
+#secondFormDiv {
+  text-align: center;
+  padding: 4vw;
+}
+
+#secondFormFormGroupDiv {
+  display: grid;
+    width: auto;
+    max-width: 80vw;
+    margin: auto;
+}
+
+
+#confirmationDiv {
+  text-align: center;
+}
+
+
+
+#confirmationDivFormGroup{
+  display: grid;
+  width: auto;
+  max-width: 80vw;
+  margin: auto;
+}
+
+@media screen and (min-width: 426px) {
+  #secondFormFormGroupDiv {
+    max-width: 55vw;
+  }
+
+  #confirmationDivFormGroup {
+    max-width: 55vw;
+  }
+}
