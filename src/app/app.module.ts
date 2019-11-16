@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { NgRedux, NgReduxModule, DevToolsExtension } from '@angular-redux/store';
 import { HttpClientModule } from '@angular/common/http';
 import thunk  from 'redux-thunk';
@@ -24,6 +24,8 @@ import { SignupComponent } from './signup/signup.component';
 import { CatCardComponent } from './cat-card/cat-card.component';
 import { KennelCardComponent } from './kennel-card/kennel-card.component';
 import { AppToastsComponent } from './app-toasts-component/app-toasts-component.component';
+
+import {AppToastService} from './app-toast-service.service';
 
 @NgModule({
    declarations: [
@@ -52,7 +54,9 @@ import { AppToastsComponent } from './app-toasts-component/app-toasts-component.
       AppRoutingModule,
       NgbModule
    ],
-   providers: [],
+   schemas: [
+     NO_ERRORS_SCHEMA
+   ],
    bootstrap: [
       AppComponent
    ]

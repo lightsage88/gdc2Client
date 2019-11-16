@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { NgReduxTestingModule, MockNgRedux} from '@angular-redux/store/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {NgbDate, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { DebugElement } from '@angular/core';
 
@@ -15,7 +16,7 @@ describe('SignupComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ SignupComponent ],
-      imports: [NgReduxTestingModule, FormsModule, ReactiveFormsModule]
+      imports: [NgReduxTestingModule, FormsModule, ReactiveFormsModule, NgbModule]
     })
     .compileComponents();
   }));
@@ -75,7 +76,7 @@ describe('SignupComponent', () => {
     expect(compiled.querySelector('input#firstNameInput').placeholder).toEqual("Enter your first name");
     expect(compiled.querySelector('input#lastNameInput').placeholder).toEqual("Enter your last name");
     expect(compiled.querySelector('input#birthdayInput').placeholder).toEqual("When's your birthday?");
- 
+
   }));
 
 
@@ -85,7 +86,7 @@ describe('SignupComponent', () => {
     fixture.detectChanges();
     const signupComponent = fixture.componentInstance;
     fixture.detectChanges();
-    signupComponent.onSubmit();  
+    signupComponent.onSubmit();
     expect(spy).toHaveBeenCalled();
   }))
 

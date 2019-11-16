@@ -6,6 +6,7 @@ import { User } from './user';
 import { Observable } from 'rxjs';
 import {refreshStateWithToken, loadAuthToken, setAuthToken, refreshAuthToken} from './actions';
 import { DatabaseService } from './database.service';
+import  {AppToastService} from './app-toast-service.service';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,8 @@ export class AppComponent {
   user: any;
   storeTokenFromObservable: string;
   constructor(private ngRedux: NgRedux<gdcClientState>,
-    private dbService: DatabaseService) {
+    private dbService: DatabaseService,
+  public toastService: AppToastService) {
 
   }
 

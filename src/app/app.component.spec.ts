@@ -1,3 +1,4 @@
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 import { TestBed, async } from '@angular/core/testing';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -20,6 +21,8 @@ import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './pageNotFound/pageNotFound.component';
 import { SearchComponent } from './search/search.component';
 import { SignupComponent } from './signup/signup.component';
+import {AppToastsComponent} from './app-toasts-component/app-toasts-component.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -47,11 +50,13 @@ describe('AppComponent', () => {
       HttpClientModule,
       BrowserModule,
       FormsModule,
-      AppRoutingModule
+      AppRoutingModule,
+      NgbModule
       ],
       declarations: [
         AboutComponent,
         AppComponent,
+        AppToastsComponent,
         AccountComponent,
         CatComponent,
         CatCardComponent,
@@ -66,6 +71,9 @@ describe('AppComponent', () => {
       ],
       providers: [
         {provide: APP_BASE_HREF, useValue: '/'}
+      ],
+      schemas: [
+        NO_ERRORS_SCHEMA
       ]
     }).compileComponents();
   }));
@@ -90,12 +98,6 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('gdc2Client');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('this is the main app');
-  });
 
-  
+
 });

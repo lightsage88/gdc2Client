@@ -8,6 +8,7 @@ import { KennelCardComponent } from './kennel-card.component';
 import { KennelComponent } from '../kennel/kennel.component';
 import { NgReduxTestingModule } from '@angular-redux/store/testing';
 import { DatabaseService } from '../database.service';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 describe('KennelCardComponent', () => {
   let component: KennelCardComponent;
@@ -16,7 +17,7 @@ describe('KennelCardComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ KennelCardComponent, KennelComponent ],
-      imports: [ HttpClientTestingModule, NgReduxTestingModule],
+      imports: [ HttpClientTestingModule, NgReduxTestingModule, NgbModule],
       providers: [DatabaseService]
     })
     .compileComponents();

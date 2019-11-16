@@ -18,7 +18,7 @@ describe('CatCardComponent', () => {
   let dbServiceStub : Partial<DatabaseService>;
 
     // dbServiceStub = {
-    //   addCatToDB: function 
+    //   addCatToDB: function
     // }
 
 
@@ -31,50 +31,50 @@ describe('CatCardComponent', () => {
     .compileComponents();
   }));
 
-  beforeEach(() => {
-  
-    fixture = TestBed.createComponent(CatCardComponent);
-    component = fixture.componentInstance;
-    component.catData = {
-      status: "adoptable",
-      name: "Felix",
-      description: "A fine boy",
-      photos: [],
-      breeds: {
-        primary: "American Shorthair"
-      },
-      colors: {
-        primary: "Black"
-      },
-      age: "Adult",
-      gender: "Male"
-    };
-    fixture.detectChanges();
-  });
-
-  it('should create', async(() => {
-    expect(component).toBeTruthy();
-  }));
-
-  // it('will call dbService:addCatToDB() when placeCatInKennel() is called', async(()=>{
+  // beforeEach(() => {
+  //   jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
   //   fixture = TestBed.createComponent(CatCardComponent);
   //   component = fixture.componentInstance;
-  //  dbService = new DatabaseService(http: HttpClientTestingModule)
+  //   component.catData = {
+  //     status: "adoptable",
+  //     name: "Felix",
+  //     description: "A fine boy",
+  //     photos: [],
+  //     breeds: {
+  //       primary: "American Shorthair"
+  //     },
+  //     colors: {
+  //       primary: "Black"
+  //     },
+  //     age: "Adult",
+  //     gender: "Male"
+  //   };
+  //   fixture.detectChanges();
+  // });
+  //
+  // it('should create', async(() => {
+  //   expect(component).toBeTruthy();
+  // }));
+  //
+  // // it('will call dbService:addCatToDB() when placeCatInKennel() is called', async(()=>{
+  // //   fixture = TestBed.createComponent(CatCardComponent);
+  // //   component = fixture.componentInstance;
+  // //  dbService = new DatabaseService(http: HttpClientTestingModule)
+  // //   component.placeCatInKennel();
+  //
+  // // }))
+  //
+  // it('will dispatch ngRedux:addCat which has a type of ADD_CAT when placeCatInKennel() is called', async(()=>{
+  //   const spy = spyOn(MockNgRedux.getInstance(), 'dispatch');
+  //   // fixture = TestBed.createComponent(CatCardComponent);
+  //   component = fixture.componentInstance;
   //   component.placeCatInKennel();
-
+  //   expect(spy).toHaveBeenCalledWith({
+  //     type: 'ADD_CAT', payload: Object({ status: 'adoptable', name: 'Felix', description: 'A fine boy', photos: [  ], breeds: Object({ primary: 'American Shorthair' }), colors: Object({ primary: 'Black' }), age: 'Adult', gender: 'Male' })
+  //   });
+  //
+  //
   // }))
-
-  it('will dispatch ngRedux:addCat which has a type of ADD_CAT when placeCatInKennel() is called', async(()=>{
-    const spy = spyOn(MockNgRedux.getInstance(), 'dispatch');   
-    // fixture = TestBed.createComponent(CatCardComponent);
-    component = fixture.componentInstance;
-    component.placeCatInKennel();
-    expect(spy).toHaveBeenCalledWith({
-      type: 'ADD_CAT', payload: Object({ status: 'adoptable', name: 'Felix', description: 'A fine boy', photos: [  ], breeds: Object({ primary: 'American Shorthair' }), colors: Object({ primary: 'Black' }), age: 'Adult', gender: 'Male' }) 
-    });
-
-
-  }))
 
 
 });
