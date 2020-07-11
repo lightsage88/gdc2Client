@@ -20,7 +20,7 @@ export class KennelComponent implements OnInit {
 
   ngOnInit() {
     this.routeHelper.bouncer();
-    this.dbService.obtainAndRefreshTokenAndState();
+    // this.dbService.obtainAndRefreshTokenAndState();
     this.user$.subscribe(user => this.kennelCats = user.cats);
   }
 

@@ -17,14 +17,14 @@ export class CatCardComponent implements OnInit {
 
   constructor(private ngRedux: NgRedux<gdcClientState>,
     private dbService: DatabaseService,
-  private toastService: AppToastService) { }
-  @Input() catData: any;
-  @select() user$ : Observable<User>;
-  user: User;
-  showToast: boolean = true;
-  ngOnInit() {
+    private toastService: AppToastService) { }
+    @Input() catData: any;
+    @select() user$ : Observable<User>;
+    user: User;
+    showToast: boolean = true;
+    ngOnInit() {
     this.user$.subscribe(user => this.user = user);
-  }
+    }
 
   placeCatInKennel() {
 

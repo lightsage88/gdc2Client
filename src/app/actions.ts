@@ -8,7 +8,7 @@ import { environment }  from '../environments/environment'
 //Where the actions that will be read by our reducer live here :)
 
 export const ADD_CAT = 'ADD_CAT';
-export const addCat = (payload) => ({
+export const addCat = payload => ({
     type: ADD_CAT,
     payload
 });
@@ -18,7 +18,7 @@ export const addCat = (payload) => ({
 
 
 export const LOG_IN_SUCCESS = "LOG_IN_SUCCESS";
-export const loginSuccess = (payload) => ({
+export const loginSuccess = payload => ({
     type: LOG_IN_SUCCESS,
     payload
 });
@@ -30,7 +30,7 @@ export const logout = () => ({
 
 
 export const REFRESH_STATE = "REFRESH_STATE";
-export const refreshState = (payload) => ({
+export const refreshState = payload => ({
     type: REFRESH_STATE,
     payload
 });

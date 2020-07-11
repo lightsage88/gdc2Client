@@ -96,7 +96,7 @@ export function rootReducer(state, action): gdcClientState {
             return Object.assign({}, state, INITIAL_STATE);
 
         case REFRESH_STATE:
-            console.log('dispatching refreshing of state from reducer');
+            console.log('dispatching REFRESH_STATE from reducer');
             console.log(action.payload);
             return Object.assign({}, state, {
                 ...state,

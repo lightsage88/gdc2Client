@@ -21,6 +21,4 @@ status_changed_at:string
 tags: any,
 type: string,
 url: string
-
-
 }

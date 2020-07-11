@@ -94,7 +94,7 @@ ngOnInit() {
       }
     })
     .then(response => {
-      console.log(response)
+      console.log('fear tactic', response)
     })
     .catch(err => console.error(err));
 
