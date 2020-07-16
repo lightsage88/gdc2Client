@@ -116,7 +116,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("\r\n\r\n<p class=\"buttonPWrapper\">\r\n  <button type=\"button\" class=\"btn btn-outline-primary kennelCardToggleButton\" (click)=\"isCollapsed = !isCollapsed\"\r\n          [attr.aria-expanded]=\"!isCollapsed\" attr.aria-controls={{buttonDataTarget}}>\r\n          <img [src]=\"catData.photos && catData.photos.length > 0 ? catData.photos[0].small : '' \"/>\r\n          <h5>{{catData.name}}</h5>\r\n  </button>\r\n</p>\r\n<div id={{buttonDataTarget}} [ngbCollapse]=\"isCollapsed\">\r\n  <div class=\"card kennelCard\">\r\n    <div class=\"card-body\">\r\n      <span *ngIf='catData.status == \"adoptable\"' class=\"badge badge-success\">Available</span>\r\n      <span *ngIf='catData.status !== \"adoptable\"' class=\"bade badge-danger\">Unavailable</span>\r\n      <button class=\"btn btn-outline-danger kennelCardDeleteButton\" (click)=\"removeCat()\">X</button>\r\n\r\n      <section class=\"kennelCardDetailsSection\">\r\n        <h5>Details</h5>\r\n      <p><strong>Breed: </strong>{{catBreed}}</p>\r\n      <p><strong>Age: </strong>{{catData.age}}</p>\r\n      <p><strong>Gender: </strong>{{catData.gender}}</p>\r\n      <p><strong>Color: </strong>{{catColor}}</p>\r\n      </section>\r\n      <section class=\"kennelCardDescriptionSection\">\r\n        <h5>Description</h5>\r\n        <p>{{catData.description}}</p>\r\n      </section>\r\n\r\n\r\n    </div>\r\n  </div>\r\n</div>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("\r\n\r\n<p class=\"buttonPWrapper\">\r\n  <button type=\"button\" class=\"btn btn-outline-primary kennelCardToggleButton\" (click)=\"isCollapsed = !isCollapsed\"\r\n          [attr.aria-expanded]=\"!isCollapsed\" attr.aria-controls={{buttonDataTarget}}>\r\n          <img [src]=\"catData.photos && catData.photos.length > 0 ? catData.photos[0].small : '' \"/>\r\n          <h5>{{catData.name}}</h5>\r\n  </button>\r\n</p>\r\n<div id={{buttonDataTarget}} [ngbCollapse]=\"isCollapsed\">\r\n  <div class=\"card kennelCard\">\r\n    <div class=\"card-body\">\r\n      <span *ngIf='catData.status == \"adoptable\"' class=\"badge badge-success\">Available</span>\r\n      <span *ngIf='catData.status !== \"adoptable\"' class=\"bade badge-danger\">Unavailable</span>\r\n      <button class=\"btn btn-outline-danger kennelCardDeleteButton\" (click)=\"removeCat(this.kittyMongoID)\">X</button>\r\n\r\n      <section class=\"kennelCardDetailsSection\">\r\n        <h5>Details</h5>\r\n      <p><strong>Breed: </strong>{{catBreed}}</p>\r\n      <p><strong>Age: </strong>{{catData.age}}</p>\r\n      <p><strong>Gender: </strong>{{catData.gender}}</p>\r\n      <p><strong>Color: </strong>{{catColor}}</p>\r\n      </section>\r\n      <section class=\"kennelCardDescriptionSection\">\r\n        <h5>Description</h5>\r\n        <p>{{catData.description}}</p>\r\n      </section>\r\n\r\n\r\n    </div>\r\n  </div>\r\n</div>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/kennel/kennel.component.html": 
@@ -171,7 +171,7 @@
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jumbotron jumbotron-fluid\" id=\"signupBanner\">\r\n  <h2>Signup</h2>\r\n  <aside>We'd be <strong>paw</strong>-fully pleased <strong>furr</strong> you to join us.</aside>\r\n</div>\r\n\r\n<form (ngSubmit)=\"onSubmit()\" #signupForm=\"ngForm\">\r\n    <div class=\"form-group\">\r\n        <label id=\"usernameLabel\">Username:\r\n          <input class=\"form-control\" id=\"usernameInput\"  placeholder=\"Enter your username\" name=\"username\" [(ngModel)]=\"model.username\" type=\"text\" required/>\r\n        </label>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label id=\"passwordLabel\">Password:\r\n          <input class=\"form-control\"  id=\"passwordInput\" type=\"password\" name=\"password\" [(ngModel)]=\"model.password\" placeholder=\"Enter your password\" required/>\r\n        </label>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label id=\"retypePasswordLabel\">Re-Type Password:\r\n          <input class=\"form-control\" id=\"confirmInput\" placeholder=\"Re-enter your password\" type=\"password\" name=\"passwordConfirm\" [(ngModel)]=\"model.passwordConfirm\" required/>\r\n        </label>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label id=\"firstNameLabel\">First Name:\r\n          <input class=\"form-control\"  id=\"firstNameInput\" placeholder=\"Enter your first name\" type=\"text\" name=\"firstName\" [(ngModel)]=\"model.firstName\"  required />\r\n        </label>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label id=\"lastNameLabel\">Last Name:\r\n          <input class=\"form-control\" id=\"lastNameInput\"  placeholder=\"Enter your last name\" type=\"text\" name=\"lastName\" [(ngModel)]=\"model.lastName\"  required />\r\n        </label>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label id=\"birthdayLabel\">Birthday:\r\n          <input class=\"form-control\" id=\"birthdayInput\" required (click)=\"d.toggle()\" placeholder=\"When's your birthday?\" type=\"text\" [(ngModel)]=\"model.birthday\" ngbDatepicker #d=\"ngbDatepicker\"  name=\"birthday\">\r\n        </label>\r\n    </div>\r\n  <button  class=\"btn btn-primary\" id=\"signupSubmitButton\" type=\"submit\" [disabled]=\"!signupForm.valid\"  >LOGIN</button>\r\n  <!-- <ngb-datepicker #d></ngb-datepicker> -->\r\n</form>\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"jumbotron jumbotron-fluid\" id=\"signupBanner\">\r\n  <h2>Signup</h2>\r\n  <aside>We'd be <strong>paw</strong>-fully pleased <strong>furr</strong> you to join us.</aside>\r\n</div>\r\n\r\n<form (ngSubmit)=\"onSubmit()\" #signupForm=\"ngForm\">\r\n    <div class=\"form-group\">\r\n        <label id=\"usernameLabel\">Username:\r\n          <input class=\"form-control\" id=\"usernameInput\"  placeholder=\"Enter your username\" name=\"username\" [(ngModel)]=\"model.username\" type=\"text\" required/>\r\n        </label>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label id=\"passwordLabel\">Password:\r\n          <input class=\"form-control\"  id=\"passwordInput\" type=\"password\" name=\"password\" [(ngModel)]=\"model.password\" placeholder=\"Enter your password\" required/>\r\n        </label>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label id=\"retypePasswordLabel\">Re-Type Password:\r\n          <input class=\"form-control\" id=\"confirmInput\" placeholder=\"Re-enter your password\" type=\"password\" name=\"passwordConfirm\" [(ngModel)]=\"model.passwordConfirm\" required/>\r\n        </label>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label id=\"firstNameLabel\">First Name:\r\n          <input class=\"form-control\"  id=\"firstNameInput\" placeholder=\"Enter your first name\" type=\"text\" name=\"firstName\" [(ngModel)]=\"model.firstName\"  required />\r\n        </label>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label id=\"lastNameLabel\">Last Name:\r\n          <input class=\"form-control\" id=\"lastNameInput\"  placeholder=\"Enter your last name\" type=\"text\" name=\"lastName\" [(ngModel)]=\"model.lastName\"  required />\r\n        </label>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label id=\"birthdayLabel\">Birthday:\r\n          <input class=\"form-control\" id=\"birthdayInput\" required (click)=\"d.toggle()\" placeholder=\"When's your birthday?\" type=\"text\" [(ngModel)]=\"model.birthday\" ngbDatepicker #d=\"ngbDatepicker\"  name=\"birthday\">\r\n        </label>\r\n    </div>\r\n  <button  class=\"btn btn-primary\" id=\"signupSubmitButton\" type=\"submit\" (click)=\"onSubmit()\"   >LOGIN</button>\r\n  <!-- <ngb-datepicker #d></ngb-datepicker> -->\r\n</form>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/tslib/tslib.es6.js": 
@@ -1174,6 +1174,7 @@
                     this.user$.subscribe(function (user) { return _this.user = user; });
                 };
                 CatCardComponent.prototype.placeCatInKennel = function () {
+                    console.log('placeCatInKennel being run', this.user);
                     //We want to dispatch an action where we send this catData to our database
                     //and put it in the cats array of our User model.
                     this.dbService.addCatToDB(this.catData);
@@ -1370,7 +1371,7 @@
                 };
                 DatabaseService.prototype.removeCatFromDB = function (catID) {
                     var _this = this;
-                    console.log(this.user.username);
+                    console.log('removeCatFromDB running yo', this.user.username, catID);
                     console.log('placeholder for Rmovecat fromd b');
                     return axios__WEBPACK_IMPORTED_MODULE_4___default()({
                         url: _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].API_BASE_URL + "/api/users/removeCat",
@@ -1537,19 +1538,16 @@
                     this.isCollapsed = true;
                 }
                 KennelCardComponent.prototype.ngOnInit = function () {
-                    console.log('balaclava');
+                    this.kittyMongoID = this.catData._id;
                     this.cardHeaderId = this.catData.id + "-heading";
                     this.buttonDataTarget = "#" + this.catData.id + "-collapse";
                     this.catBreed = this.catData.breeds && this.catData.breeds.primary !== undefined ? this.catData.breeds.primary : "N/A";
                     this.catColor = this.catData.colors && this.catData.colors.primary !== undefined ? this.catData.colors.primary : "N/A";
-                    console.log(this.cardHeaderId, this.buttonDataTarget);
                 };
-                KennelCardComponent.prototype.removeCat = function () {
-                    console.log(this.catData);
-                    this.dbService.removeCatFromDB(this.catData.id);
+                KennelCardComponent.prototype.removeCat = function (key) {
+                    this.dbService.removeCatFromDB(key);
                     var toastBody = this.catData.name + " was removed.";
                     this.toastService.show('Grab Dat Cat', toastBody, { classname: 'bg-danger text-light', delay: 5000 });
-                    // this.toastService.remove()
                 };
                 return KennelCardComponent;
             }());
@@ -2086,7 +2084,8 @@
                     lastName: "",
                     birthday: '',
                     cats: [],
-                    zodiacCombo: {}
+                    zodiacCombo: {},
+                    _id: ''
                 },
                 lastUpdate: null
             };
@@ -2105,7 +2104,8 @@
                         return Object.assign({}, state, Object.assign({}, state, { user: Object.assign({}, state.user, { cats: userCats }) }));
                     case _actions__WEBPACK_IMPORTED_MODULE_1__["LOG_IN_SUCCESS"]:
                         console.log('you are using login success');
-                        var _a = action.payload.user, username = _a.username, firstName = _a.firstName, lastName = _a.lastName, birthday = _a.birthday, cats = _a.cats, zodiacCombo = _a.zodiacCombo;
+                        console.log(action.payload.user);
+                        var _a = action.payload.user, username = _a.username, firstName = _a.firstName, lastName = _a.lastName, birthday = _a.birthday, cats = _a.cats, zodiacCombo = _a.zodiacCombo, _id = _a._id;
                         var authToken = action.payload.authToken;
                         return Object.assign({}, state, Object.assign({}, state, { user: {
                                 username: username,
@@ -2116,6 +2116,7 @@
                                 authToken: authToken,
                                 zodiacCombo: zodiacCombo,
                                 loggedIn: true,
+                                _id: _id
                             } }));
                     case _actions__WEBPACK_IMPORTED_MODULE_1__["LOG_OUT"]:
                         console.log('you are logging out');
@@ -2131,7 +2132,8 @@
                                 birthday: action.payload.birthday,
                                 cats: action.payload.cats,
                                 zodiacCombo: action.payload.zodiacCombo,
-                                authToken: action.payload.authToken
+                                authToken: action.payload.authToken,
+                                _id: action.payload._id
                             } }));
                     case _actions__WEBPACK_IMPORTED_MODULE_1__["SET_AUTH_TOKEN"]:
                         console.log('settingAuth token into state');
