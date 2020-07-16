@@ -2,9 +2,9 @@ dist: trusty
 sudo: false
 language: node_js
 node_js:
-- '10'
+- '9'
 addons:
-  # chrome: stable
+  chrome: stable
 cache:
   directories:
   - "./node_modules"
