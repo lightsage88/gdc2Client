@@ -9,7 +9,8 @@ export interface User {
     lastName: string;
     birthday: string;
     cats: Cat[];
-    zodiacCombo: Object
+    zodiacCombo: Object;
+    _id: Object;
 }
 
 

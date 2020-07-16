@@ -14,11 +14,13 @@ export class KennelCardComponent implements OnInit {
   buttonDataTarget: any;
   catBreed: any;
   catColor: any;
+  kittyMongoID: any;
 
   constructor(private dbService: DatabaseService, private toastService: AppToastService) { }
 
   ngOnInit() {
-    console.log('balaclava');
+    console.log('balaclava', this.catData);
+    this.kittyMongoID = this.catData._id
     this.cardHeaderId = this.catData.id + "-heading";
     this.buttonDataTarget = "#" + this.catData.id + "-collapse"
     this.catBreed =  this.catData.breeds && this.catData.breeds.primary !== undefined ? this.catData.breeds.primary : "N/A";
@@ -27,9 +29,9 @@ export class KennelCardComponent implements OnInit {
 
   }
 
-  removeCat(): void {
-    console.log(this.catData);
-    this.dbService.removeCatFromDB(this.catData.id)
+  removeCat(key): void {
+    console.log('removeCat running', key);
+    this.dbService.removeCatFromDB(key)
     let toastBody = this.catData.name + " was removed.";
 
     this.toastService.show('Grab Dat Cat', toastBody, {classname: 'bg-danger text-light', delay: 5000});

@@ -34,6 +34,6 @@
           <input class="form-control" id="birthdayInput" required (click)="d.toggle()" placeholder="When's your birthday?" type="text" [(ngModel)]="model.birthday" ngbDatepicker #d="ngbDatepicker"  name="birthday">
         </label>
     </div>
-  <button  class="btn btn-primary" id="signupSubmitButton" type="submit" [disabled]="!signupForm.valid"  >LOGIN</button>
+  <button  class="btn btn-primary" id="signupSubmitButton" type="submit" (click)="onSubmit()"   >LOGIN</button>
   <!-- <ngb-datepicker #d></ngb-datepicker> -->
 </form>

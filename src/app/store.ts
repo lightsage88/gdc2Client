@@ -47,7 +47,8 @@ export const INITIAL_STATE: gdcClientState = {
         lastName: "",
         birthday: '',
         cats: [],
-        zodiacCombo: {}
+        zodiacCombo: {},
+        _id: ''
 
     },
     lastUpdate: null
@@ -76,7 +77,8 @@ export function rootReducer(state, action): gdcClientState {
 
         case LOG_IN_SUCCESS:
             console.log('you are using login success');
-            let {username, firstName, lastName, birthday, cats, zodiacCombo} = action.payload.user;
+            console.log(action.payload.user)
+            let {username, firstName, lastName, birthday, cats, zodiacCombo, _id} = action.payload.user;
             let {authToken} = action.payload;
             return Object.assign({}, state, {
                 ...state,
@@ -89,6 +91,7 @@ export function rootReducer(state, action): gdcClientState {
                     authToken,
                     zodiacCombo,
                     loggedIn: true,
+                    _id
                 }
             })
         case LOG_OUT:
@@ -108,7 +111,8 @@ export function rootReducer(state, action): gdcClientState {
                     birthday: action.payload.birthday,
                     cats: action.payload.cats,
                     zodiacCombo: action.payload.zodiacCombo,
-                    authToken: action.payload.authToken
+                    authToken: action.payload.authToken,
+                    _id: action.payload._id
                 }
             })
 

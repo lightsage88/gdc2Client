@@ -101,7 +101,7 @@ ngOnInit() {
   }
 
   removeCatFromDB(catID) {
-    console.log(this.user.username);
+    console.log('removeCatFromDB running yo', this.user.username, catID);
     console.log('placeholder for Rmovecat fromd b');
     return axios({
       url: `${environment.API_BASE_URL}/api/users/removeCat`,
