@@ -5,6 +5,7 @@ node_js:
 - '10'
 addons:
   chrome: stable
+  chromedriver: ./node_modules/protractor/bin/webdriver-manager update --versions.chrome=84.0.4147.30
 cache:
   directories:
   - "./node_modules"
