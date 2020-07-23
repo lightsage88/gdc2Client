@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   // API_BASE_URL: "http://localhost:8000",
-  API_BASE_URL: "https://fast-peak-68791.herokuapp.com",
+  API_BASE_URL: "http://fast-peak-68791.herokuapp.com",
   JWT_SECRET: "FELIBO",
   JWT_EXPIRY: "1d"
 };
