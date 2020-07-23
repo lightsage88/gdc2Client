@@ -32,7 +32,7 @@ errorHandler(error: HttpErrorResponse) {
 }
 
 getCatBreeds() { 
-  console.log('getCatBreeds running');
+  console.log('getCatBreeds running', `${environment.API_BASE_URL}`);
   return axios({
     url: `${environment.API_BASE_URL}/api/cats/catBreeds`,
     method: "GET",
