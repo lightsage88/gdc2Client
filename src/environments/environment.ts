@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
+  production: true,
+  //production: false,
   // API_BASE_URL: "http://localhost:8000",
   API_BASE_URL: "https://fast-peak-68791.herokuapp.com",
   JWT_SECRET: "FELIBO",
