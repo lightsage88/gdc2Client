@@ -10,5 +10,6 @@ export interface Cat {
     name: string;
     status: string;
     thumbnail: string;
+    petfinderid: string;
 }
  

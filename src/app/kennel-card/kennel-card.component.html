@@ -12,7 +12,7 @@
     <div class="card-body">
       <span *ngIf='catData.status == "adoptable"' class="badge badge-success">Available</span>
       <span *ngIf='catData.status !== "adoptable"' class="bade badge-danger">Unavailable</span>
-      <button class="btn btn-outline-danger kennelCardDeleteButton" (click)="removeCat(this.kittyMongoID)">X</button>
+      <button class="btn btn-outline-danger kennelCardDeleteButton" (click)="removeCat()">X</button>
 
       <section class="kennelCardDetailsSection">
         <h5>Details</h5>
