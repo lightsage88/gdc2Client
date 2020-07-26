@@ -81,12 +81,13 @@ describe('SignupComponent', () => {
 
 
   it('calling onSubmit() will cause dispatch to be fired', async(()=>{
+    const e = 'event'
     const spy = spyOn(MockNgRedux.getInstance(), 'dispatch');
     const fixture = TestBed.createComponent(SignupComponent);
     fixture.detectChanges();
     const signupComponent = fixture.componentInstance;
     fixture.detectChanges();
-    signupComponent.onSubmit();
+    signupComponent.onSubmit(e);
     expect(spy).toHaveBeenCalled();
   }))
 
