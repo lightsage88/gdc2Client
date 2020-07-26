@@ -43,12 +43,12 @@ describe('SignupComponent', () => {
     expect(signupComponent.model).toEqual(Object({}));
   }));
 
-  it('should have a button with LOGIN as text', async(()=>{
+  it('should have a button with SIGNUP & LOGIN as text', async(()=>{
     const fixture = TestBed.createComponent(SignupComponent);
     fixture.detectChanges();
     const signupComponent = fixture.componentInstance;
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('button').textContent).toEqual("LOGIN");
+    expect(compiled.querySelector('button').textContent).toEqual("SIGNUP & LOGIN");
     fixture.detectChanges();
     // expect(signupComponent.onSubmit).toHaveBeenCalled();
   }));
