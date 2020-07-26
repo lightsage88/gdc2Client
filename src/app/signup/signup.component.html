@@ -3,7 +3,7 @@
   <aside>We'd be <strong>paw</strong>-fully pleased <strong>furr</strong> you to join us.</aside>
 </div>
 
-<form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+<form (ngSubmit)="onSubmit($event)" #signupForm="ngForm">
     <div class="form-group">
         <label id="usernameLabel">Username:
           <input class="form-control" id="usernameInput"  placeholder="Enter your username" name="username" [(ngModel)]="model.username" type="text" required/>
