@@ -15,8 +15,7 @@ script:
 - npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
 deploy:
   provider: heroku
-  api_key:
-    secure: Z/058n2Ti7e8J9IYYZcjuRg4Tehn6eZIjPGzyUs4gWDDFaz3Yf1yKlK6b0Sfozdq+oJ982unzo4JmKmob4xK1yYMJ272p+vQPuhEO4Ox7NH1+yZTEegecmw293Mgg8/6GKaEt53QG5vwDcB0eWUkgZzumDueAhHlSsMNQBNaMtTeSwiBkXYLPsHQaRINHRgo+/OX1YNL80RQobS455Vt8U5Kyp193sCoym7X7KE0yzOnoDC6vn2STwi1Ibe9tS7BfQ377DeIN0Z0KjjwcAeK9UNBBPogae+M2u6NYV2H5LrQHh1090Qp6p/iM/j0ixjMCrBe7w67835qRjtPJfLvZ7jOWN97jTRxLr0/DEQZqWgkvIs/tbKQUCNNhBbA/cXVWUzysFdy/tUjAru4u2egi5KgdZZ7U2EeyzzzgWjJfczlQGndCkSE3AaSUxKHsdGw7DrWb73i+SCrDHUykLq+tBg8hhgsExO0InJW9iK4uzMOZLVHXBDRibTYS3v5zpmNBTs4pGZeEdPVr38FsiId5ivpNjpw02ihhpC3TpnPiEfONAJC7EEtNtEZa0I6ACyIrwYj9vTcjrFYw2+udamCyN0YQ8ioQWySgz8Ntm21yLfiEUSHfuu0qTQ0LPHzDvqJIVc7ZJgoXbQG2XxxURwm7Ys68ma8uNIrxfL5A/x39XI=
+  api_key: 6366ebc3-e8fa-4650-8485-5e4a3b41a9cb
   app: gdc2Client
   on:
     repo: lightsage88/gdc2Client
