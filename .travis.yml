@@ -15,7 +15,8 @@ script:
 - npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
 deploy:
   provider: heroku
-  api_key: 6366ebc3-e8fa-4650-8485-5e4a3b41a9cb
+  api_key:
+    secure: lvppXLjfr1jiV9EhNDYFxgW6ewU4n8Qe0dM96eQNdfR8DzySn8J+WZlolWsaRfHBDPwqXT9/HGdZ/E4Wcg5gOtTvE4fUMbDwvJbWcXVbXAUT9bUh2sH298VW83w9Z+URgYmCQoScaBd3kkZUIuI4btFp7u10/nQxVIoPlrMOZpzGZ1LYVs3jxPCC1iNFdrTJt38eZH6HxgEGNgQXgYK6slcB9YBQbog8KLzlwCxBgck6WgIK6VZBj4PLBL7bR5aoHUapSE9RsYUIgrlNpDOiqGG2mqTmBgJryOL2FHUUlYaonaSBOsLGxIPo2AiHz6O6Q6erK272zhsEnDgC6CNN08uz6pEBaW19qJcunRwQCqibH+dX2v0kg8767PxuRwvBh9yoXIqVo3rLcCZLK8yoxiXXy8VJo3V+CgNGTR9sMxRD7+Q+LghjwkusRNDeAuVloOBTqYCgAs7mngz+v85VDymk+XUWTQF3cz6c31Yq5KiXx5zScOWsLWZAoTSCFAG7v4al6t5DkZDkube8uis2aLTUtoGwoEvMK0y1nKUB9giOwgwFdUKf6v10Y/TQhEuTkqa/Gg1qcsmQHNVZjhqB9cWTkx6BplCk4w1rxTfSkxHDU9cuUoLlK26i1cp4gNWIU7XYgNeGarsb8pM/qsWReALiEi7deHx8q0DttdDqeVY=
   app: fast-brushlands-35777
   on:
     repo: lightsage88/gdc2Client
