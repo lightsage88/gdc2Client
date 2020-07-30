@@ -7,14 +7,22 @@ import axios from 'axios';
 import {NgRedux ,select } from '@angular-redux/store';
 import { gdcClientState } from './store';
 import { refreshStateWithToken, refreshAuthToken, } from './actions';
+import {AppToastService} from './app-toast-service.service';
+import {Router} from '@angular/router';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class DatabaseService {
 
-constructor(private http: HttpClient, private ngRedux: NgRedux<gdcClientState>) { }
+constructor(private http: HttpClient, 
+  private ngRedux: NgRedux<gdcClientState>, 
+  private toastService: AppToastService,
+  private router: Router) { }
 @select() user$;
+
 username: any;
 user: any;
 httpOptions = {
@@ -22,6 +30,7 @@ httpOptions = {
     "Accept":"application/json"
   })
 }
+
 ngOnInit() {
   this.user$.subscribe(user => this.username = user.username);
   this.user$.subscribe(user => this.user = user);
@@ -138,6 +147,10 @@ ngOnInit() {
     })
     .then(response => {
       console.log(response)
+      //TODO: if the responses code is 201 then we should fire a ui element saying the udpate worked
+      if(response.data.code === 201) {
+        this.toastService.show("Grab Dat Cat", "Password Change Successful!", {classname: 'bg-success text-light', delay: 5000});
+      }
     })
     .catch(err => console.error(err))
   }
@@ -160,6 +173,12 @@ ngOnInit() {
     })
     .then(response => {
       console.log(response)
+      if(response.data.code === 201) {
+        this.toastService.show("Grab Dat Cat", "Account Update Successful!", {classname: 'bg-success text-light', delay: 5000});
+        setTimeout(()=>{
+          window.location.reload();
+        }, 1000)
+      }
     })
     .catch(err => console.error(err));
   }

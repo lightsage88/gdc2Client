@@ -91,6 +91,7 @@ export class AccountComponent implements OnInit {
   }
 
   attemptPasswordChange() {
+    console.log('Kendrick Lamar')
     console.log(this.passwordChangeObject);
     this.dbService.attemptPasswordUpdate(this.user.username,this.passwordChangeObject)
 

@@ -33,6 +33,12 @@
 
 #confirmationDiv {
   text-align: center;
+  border: solid;
+  width: 100vw;
+  background: silver;
+  position: fixed;
+  top: 50%;
+  padding: 2vw;
 }
 
 
