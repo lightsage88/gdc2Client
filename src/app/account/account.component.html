@@ -43,7 +43,11 @@
             </div>
         </form>
     </div>
-<!-- TODO: Make a modal -->
+    <div id="blockDiv" *ngIf="displayBlockModal == true">
+        <h3>You can't change the password of the sample account.</h3>
+        <p>Feel free to make another account and play with that.</p>
+        <button (click)="closeBlockModal()">OK</button>
+    </div>
     <div id="confirmationDiv" *ngIf="displayModal == true">
         <h3>Do you really want to update?</h3>
         <h5>If so, you'll need to enter your password</h5>

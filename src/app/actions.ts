@@ -81,11 +81,8 @@ export const refreshState = payload => ({
         .then(response => {
             console.log(response);
             dispatch(loginSuccess(response.data));
-
             dispatch(storeAuthInfo(response.data));
-
             localStorage.setItem('authToken', response.data.authToken);
-
         })
         .catch(err => console.error(err));
     }
@@ -109,14 +106,23 @@ export const refreshState = payload => ({
             }
         })
         .then(response => {
+            console.log('megaman', response)
             let payload = response.data;
             if(password === passwordConfirm){
                 payload.password = password;
             }
+            if(response.data.code !== 422) {
+                localStorage.setItem('validAccountCreation', 'true')
+            } else {
+                localStorage.setItem('validAccountCreation', 'false')
+                localStorage.setItem('signupErrorMessage', response.data.message)
+            }
             dispatch(logIn(payload));
-
         })
-        .catch(err => console.error(err));
+        .catch(err => {
+            console.log(err)
+            console.error('burrito',err)
+        });
     }
 
     export const refreshStateWithToken = (token):any => dispatch => {

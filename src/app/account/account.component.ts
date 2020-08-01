@@ -42,6 +42,7 @@ export class AccountComponent implements OnInit {
   authToken: any;
 
   displayModal: boolean = false;
+  displayBlockModal: boolean = false;
 
   constructor(private ngRedux: NgRedux<gdcClientState>,
     private dbService: DatabaseService,
@@ -58,7 +59,6 @@ export class AccountComponent implements OnInit {
     this.user$.subscribe(user => this.user = user);
     // this.user$.subscribe(user => this.authTokenFromState = user.authToken)
     this.user$.subscribe(user => this.userAccountInput.birthday = user.birthday);
-
     this.authToken = localStorage.getItem('authToken');
     this.routeHelper.bouncer();
 
@@ -90,11 +90,22 @@ export class AccountComponent implements OnInit {
     this.attemptAccountUpdate() ;
   }
 
+  closeBlockModal() {
+    console.log('casdfsdfsdf')
+    this.displayBlockModal = false
+  }
+
   attemptPasswordChange() {
     console.log('Kendrick Lamar')
     console.log(this.passwordChangeObject);
+    console.log(this.user)
+    if(this.user.username == "administrator") {
+      console.log('bloobloo')
+      this.displayBlockModal = true
+    } else {
+      console.log('hoohoo', this.user.username)
     this.dbService.attemptPasswordUpdate(this.user.username,this.passwordChangeObject)
-
+    }
   }
 
 
