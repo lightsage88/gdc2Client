@@ -8,7 +8,6 @@ import {NgRedux ,select } from '@angular-redux/store';
 import { gdcClientState } from './store';
 import { refreshStateWithToken, refreshAuthToken, } from './actions';
 import {AppToastService} from './app-toast-service.service';
-import {Router} from '@angular/router';
 
 
 
@@ -19,8 +18,7 @@ export class DatabaseService {
 
 constructor(private http: HttpClient, 
   private ngRedux: NgRedux<gdcClientState>, 
-  private toastService: AppToastService,
-  private router: Router) { }
+  private toastService: AppToastService) { }
 @select() user$;
 
 username: any;

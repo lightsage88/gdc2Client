@@ -9,6 +9,7 @@ import { KennelComponent } from '../kennel/kennel.component';
 import { NgReduxTestingModule } from '@angular-redux/store/testing';
 import { DatabaseService } from '../database.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {Router} from '@angular/router';
 
 describe('KennelCardComponent', () => {
   let component: KennelCardComponent;

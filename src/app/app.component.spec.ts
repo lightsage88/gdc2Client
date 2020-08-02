@@ -46,12 +46,12 @@ describe('AppComponent', () => {
         RouterTestingModule,
         RouterModule.forRoot(routes),
         ReactiveFormsModule,
-      NgReduxModule,
-      HttpClientModule,
-      BrowserModule,
-      FormsModule,
-      AppRoutingModule,
-      NgbModule
+        NgReduxModule,
+        HttpClientModule,
+        BrowserModule,
+        FormsModule,
+        AppRoutingModule,
+        NgbModule
       ],
       declarations: [
         AboutComponent,
