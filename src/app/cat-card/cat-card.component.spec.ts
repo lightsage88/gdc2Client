@@ -1,26 +1,14 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-import {NgReduxTestingModule, MockNgRedux} from '@angular-redux/store/testing';
-import { CatCardComponent } from './cat-card.component';
 import { DatabaseService } from '../database.service';
-import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import { gdcClientState} from '../store'
-import { fn } from '@angular/compiler/src/output/output_ast';
-import { ADD_CAT } from '../actions';
+import { CatCardComponent } from './cat-card.component';
+import { NgReduxTestingModule } from '@angular-redux/store/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 describe('CatCardComponent', () => {
-  let component: CatCardComponent;
-  let fixture: ComponentFixture<CatCardComponent>;
-
-  let dbServiceStub : Partial<DatabaseService>;
-
-    // dbServiceStub = {
-    //   addCatToDB: function
-    // }
-
+  let component: CatCardComponent
+  let dbServiceStub : Partial<DatabaseService>
+  let fixture: ComponentFixture<CatCardComponent>
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -28,8 +16,8 @@ describe('CatCardComponent', () => {
       imports: [NgReduxTestingModule, HttpClientTestingModule],
       providers: [ DatabaseService ]
     })
-    .compileComponents();
-  }));
+    .compileComponents()
+  }))
 
   // beforeEach(() => {
   //   jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
@@ -75,6 +63,4 @@ describe('CatCardComponent', () => {
   //
   //
   // }))
-
-
 });

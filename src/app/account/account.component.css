@@ -13,7 +13,6 @@
   color: #e3f2fd;
 }
 
-
 #nameBirthdayForm {
   text-align: center;
 }
@@ -30,7 +29,6 @@
     margin: auto;
 }
 
-
 #confirmationDiv {
   text-align: center;
   border: solid;
@@ -40,8 +38,6 @@
   top: 50%;
   padding: 2vw;
 }
-
-
 
 #confirmationDivFormGroup{
   display: grid;

@@ -7,10 +7,7 @@ import {AppToastService} from '../app-toast-service.service';
   styleUrls: ['./app-toasts-component.component.css']
 })
 export class AppToastsComponent implements OnInit {
-
   constructor(public toastService: AppToastService) { }
-
   ngOnInit() {
   }
-
 }

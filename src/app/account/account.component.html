@@ -1,65 +1,56 @@
-
 <div class="jumbotron jumbotron-fluid" id="accountBanner">
   <h2>Account</h2>
   <aside><strong>Mew</strong> can change your de<strong>-tails</strong> here.</aside>
 </div>
-
-
-
-    <form id="nameBirthdayForm" (ngSubmit)="onSubmit()" #accountForm="ngForm" >
-      <div class="form-group">
-      <label>First Name:
-          <input class="form-control" placeholder={{user.firstName}} name="firstName" type="text" [(ngModel)]="userAccountInput.firstName" />
+<form id="nameBirthdayForm" (ngSubmit)="onSubmit()" #accountForm="ngForm" >
+  <div class="form-group">
+    <label>First Name:
+      <input class="form-control" placeholder={{user.firstName}} name="firstName" type="text" [(ngModel)]="userAccountInput.firstName" />
+    </label>
+  </div>
+  <div class="form-group">
+    <label>Last Name:
+      <input class="form-control" placeholder={{user.lastName}} name="lastName" type="text" [(ngModel)]="userAccountInput.lastName" />
+    </label>
+  </div>
+  <div class="form-group">
+    <label>Birthday:
+      <input class="form-control" id="birthdayInput" (click)="d.toggle()" placeholder="{{user.birthday.month}}/{{user.birthday.day}}" type="text" [(ngModel)]="userAccountInput.birthday" ngbDatepicker #d="ngbDatepicker"  name="birthday">
+    </label>
+  </div>
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+<div id="secondFormDiv">
+  <h3>Change Password</h3>
+  <form (ngSubmit)="attemptPasswordChange()" >
+    <div id="secondFormFormGroupDiv" class="form-group">
+      <label>Current Password
+        <input class="form-control" type="password" name="password" [(ngModel)]="passwordChangeObject.password" />
       </label>
-      </div>
-
-      <div class="form-group">
-      <label>Last Name:
-              <input class="form-control" placeholder={{user.lastName}} name="lastName" type="text" [(ngModel)]="userAccountInput.lastName" />
+      <label>New Password
+        <input class="form-control" type="password" name="passwordConfirm" [(ngModel)]="passwordChangeObject.newPW">
       </label>
-      </div>
-      <div class="form-group">
-      <label>Birthday:
-
-              <input class="form-control" id="birthdayInput" (click)="d.toggle()" placeholder="{{user.birthday.month}}/{{user.birthday.day}}" type="text" [(ngModel)]="userAccountInput.birthday" ngbDatepicker #d="ngbDatepicker"  name="birthday">
-
+      <button class="btn btn-primary" type="submit">Change</button>
+    </div>
+  </form>
+</div>
+<div id="blockDiv" *ngIf="displayBlockModal == true">
+  <h3>You can't change the password of the sample account.</h3>
+  <p>Feel free to make another account and play with that.</p>
+  <button (click)="closeBlockModal()">OK</button>
+</div>
+<div id="confirmationDiv" *ngIf="displayModal == true">
+  <h3>Do you really want to update?</h3>
+  <h5>If so, you'll need to enter your password</h5>
+  <form (ngSubmit)="submitPasswordConfirm()">
+    <div id="confirmationDivFormGroup" class='form-group'>
+      <label>Password
+        <input class="form-control" type="password" name="password" [(ngModel)]="confirmationInput.password"/>
       </label>
-      </div>
-      <button class="btn btn-primary" type="submit">Submit</button>
-    </form>
-
-
-    <div id="secondFormDiv">
-        <h3>Change Password</h3>
-        <form (ngSubmit)="attemptPasswordChange()" >
-          <div id="secondFormFormGroupDiv" class="form-group">
-            <label>Current Password
-                <input class="form-control" type="password" name="password" [(ngModel)]="passwordChangeObject.password" />
-            </label>
-            <label>New Password
-                <input class="form-control" type="password" name="passwordConfirm" [(ngModel)]="passwordChangeObject.newPW">
-            </label>
-            <button class="btn btn-primary" type="submit">Change</button>
-            </div>
-        </form>
+      <label>Confirm Password
+        <input class="form-control" type="password" name="confirm" [(ngModel)]="confirmationInput.confirm"/>
+      </label>
+      <button class="btn btn-outline-success" type="submit">Meow!</button>
     </div>
-    <div id="blockDiv" *ngIf="displayBlockModal == true">
-        <h3>You can't change the password of the sample account.</h3>
-        <p>Feel free to make another account and play with that.</p>
-        <button (click)="closeBlockModal()">OK</button>
-    </div>
-    <div id="confirmationDiv" *ngIf="displayModal == true">
-        <h3>Do you really want to update?</h3>
-        <h5>If so, you'll need to enter your password</h5>
-        <form (ngSubmit)="submitPasswordConfirm()">
-            <div id="confirmationDivFormGroup" class='form-group'>
-              <label>Password
-                  <input class="form-control" type="password" name="password" [(ngModel)]="confirmationInput.password"/>
-              </label>
-              <label>Confirm Password
-                  <input class="form-control" type="password" name="confirm" [(ngModel)]="confirmationInput.confirm"/>
-              </label>
-              <button class="btn btn-outline-success" type="submit">Meow!</button>
-            </div>
-        </form>
-    </div>
+  </form>
+</div>

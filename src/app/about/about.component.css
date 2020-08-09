@@ -18,13 +18,12 @@ h3 {
   color:#9a7aa0;
 }
 
-
 section {
   border: solid;
-padding: 5vw;
-border-radius: 4vw;
-margin: 3vw;
-border-style: outset;
+  padding: 5vw;
+  border-radius: 4vw;
+  margin: 3vw;
+  border-style: outset;
 }
 
 img {

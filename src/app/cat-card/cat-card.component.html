@@ -2,9 +2,11 @@
   <h1 class="catCardName">{{catData.name}}</h1>
   <img [src]="catData.photos.length > 0 ?   catData.photos[0].small :''  " />
   <p class="catCardDescription">{{catData.description}}</p>
-    <h5 class="catCardDetails">Details</h5>
+  <h5 class="catCardDetails">Details</h5>
     <ul class="catCardUL">
-      <li><strong>BREED:</strong> {{catData.breeds.primary}}</li>
+      <li>
+        <strong>BREED:</strong> {{catData.breeds.primary}}
+      </li>
       <li>
         <strong>COLOR:</strong> {{catData.colors.primary}}
       </li>
@@ -14,8 +16,6 @@
       <li>
         <strong>GENDER:</strong> {{catData.gender}}
       </li>
-
     </ul>
-    <button class="btn btn-success catCardButton" (click)="placeCatInKennel()" [disabled]="catData.status !== 'adoptable'" >Place in wish(ker) list</button>
-
+  <button class="btn btn-success catCardButton" (click)="placeCatInKennel()" [disabled]="catData.status !== 'adoptable'" >Place in wish(ker) list</button>
 </div>
