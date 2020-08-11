@@ -1,5 +1,3 @@
-
-
 .kennelCard h5 {
   font-family: "Leckerli One", cursive;
 }
@@ -21,11 +19,6 @@ button.kennelCardToggleButton h5 {
   font-family: "Leckerli One", cursive;
 }
 
-/* .kennelCard {
-  width: auto;
-  max-width: 70vw;
-} */
-
 .kennelCardDeleteButton {
-  float:right;
+  float: right;
 }

@@ -12,35 +12,3 @@ export interface User {
     zodiacCombo: Object;
     _id: Object;
 }
-
-
-// username: {
-//     type: String,
-//     required: true,
-//     unique: true
-// },
-// password: {
-//     type:String,
-//     required: true
-// },
-// authToken: {
-//     type: String
-// },
-// loggedIn: {
-//     type: Boolean
-// },
-// firstName: {
-//     type: String,
-//     required: true,
-//     default: ''
-// },
-// lastName: {
-//     type: String,
-//     required: true,
-//     default: ''
-// },
-// birthday: {
-//     type: Date,
-//     required: false
-// },
-// cats: [catSchema]

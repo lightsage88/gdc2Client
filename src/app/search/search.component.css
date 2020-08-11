@@ -4,8 +4,6 @@
   background: #9A7AA0;
 }
 
-
-
 #searchBanner h2 {
   font-family: "Leckerli One", cursive;
 }
@@ -18,7 +16,6 @@ form {
   text-align: center;
 }
 
-
 form h2 {
   font-family: "Leckerli One", cursive;
 }
@@ -28,8 +25,6 @@ form select {
   text-align: center;
   width:90%;
 }
-
-
 
 form aside {
   font-family: "Spinakker", sans-serif;

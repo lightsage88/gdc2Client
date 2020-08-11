@@ -1,19 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import {NgRedux, select} from '@angular-redux/store';
-import { signUp } from '../actions';
-import { gdcClientState } from '../store';
-import {Observable, asyncScheduler} from 'rxjs';
-import { User } from '../user';
-import { AppToastService } from '../app-toast-service.service';
-import { Router } from '@angular/router';
-
-
+import { User } from '../user'
+import { Observable } from 'rxjs'
+import { signUp } from '../actions'
+import { Router } from '@angular/router'
+import { gdcClientState } from '../store'
+import { Component, OnInit } from '@angular/core'
+import { NgRedux, select } from '@angular-redux/store'
+import { AppToastService } from '../app-toast-service.service'
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
+
 export class SignupComponent implements OnInit {
   constructor(
     private ngRedux: NgRedux<gdcClientState>, 
@@ -22,13 +21,11 @@ export class SignupComponent implements OnInit {
   @select() user$: Observable<User>;
   user: any;
   model: any = {
+  }
 
-  };
-
-  submitDisabled: boolean = true;
+  submitDisabled: boolean = true
 
   ngOnInit() {
-    
   }
 
   manageNewUser() {
@@ -43,23 +40,16 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit(e){
-    console.log('onSubmit', e)
     e.preventDefault()
-    console.log(this.model);
-    console.log('you pressed on Submit');
-    this.ngRedux.dispatch(signUp(this.model));
-    //
+    this.ngRedux.dispatch(signUp(this.model));   
     setTimeout(() => {
       if(localStorage.getItem('validAccountCreation') === "true") {
-        console.log('our localStorage has the bit')
         this.manageNewUser()
       }
-
       if(localStorage.getItem('signupErrorMessage')){ 
         this.toastService.show("Grab Dat Cat", localStorage.getItem('signupErrorMessage'), {classname:'bg-danger text-light', delay: 5000})
         localStorage.removeItem('signupErrorMessage')
       }
     }, 5000)
   }
-
 }

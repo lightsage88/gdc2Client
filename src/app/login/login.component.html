@@ -6,15 +6,10 @@
 <div class="container">
   <form id="loginForm" (ngSubmit)="onSubmit()" #loginForm="ngForm">
     <div class="form-group">
-      <!-- <label>Username:
-        <input placeholder="Enter your username" name="username" type="text" [(ngModel)]="userCredentials.username" required/>
-      </label> -->
       <label for="usernameInput">Username:</label>
-          <input id="usernameInput" class="form-control" placeholder="Enter your mew-sername" name="username" type="text" [(ngModel)]="userCredentials.username" required/>
-
+      <input id="usernameInput" class="form-control" placeholder="Enter your mew-sername" name="username" type="text" [(ngModel)]="userCredentials.username" required/>
       <label for="passwordInput">Password:</label>
-        <input id="passwordInput" class="form-control" placeholder="paw-ssword purr-ease!" type="password" name="password" [(ngModel)]="userCredentials.password" required>
-
+      <input id="passwordInput" class="form-control" placeholder="paw-ssword purr-ease!" type="password" name="password" [(ngModel)]="userCredentials.password" required>
       <button type="submit" [disabled]="loginFormIsDisabled" class="btn btn-info">LOGIN</button>
     </div>
   </form>

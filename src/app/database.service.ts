@@ -1,95 +1,55 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { environment }  from '../environments/environment';
-import {catchError, tap, map} from 'rxjs/operators';
-import { Observable, throwError } from 'rxjs';
 import axios from 'axios';
-import {NgRedux ,select } from '@angular-redux/store';
 import { gdcClientState } from './store';
-import { refreshStateWithToken, refreshAuthToken, } from './actions';
+import { Injectable } from '@angular/core';
+import {NgRedux ,select } from '@angular-redux/store';
+import { environment }  from '../environments/environment';
 import {AppToastService} from './app-toast-service.service';
-
-
+import { refreshStateWithToken, refreshAuthToken, } from './actions';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DatabaseService {
 
+export class DatabaseService {
 constructor(private http: HttpClient, 
   private ngRedux: NgRedux<gdcClientState>, 
   private toastService: AppToastService) { }
-@select() user$;
+  @select() user$;
 
-username: any;
-user: any;
-httpOptions = {
-  headers: new HttpHeaders({
-    "Accept":"application/json"
-  })
+  username: any;
+  user: any;
+  httpOptions = {
+    headers: new HttpHeaders({
+      "Accept":"application/json"
+    })
 }
 
-ngOnInit() {
-  this.user$.subscribe(user => this.username = user.username);
-  this.user$.subscribe(user => this.user = user);
-
-
-  console.log(this.user);
-}
-
-
+  ngOnInit() {
+    this.user$.subscribe(user => this.username = user.username);
+    this.user$.subscribe(user => this.user = user);
+  }
 
   refreshStateViaToken() {
-     let authToken = localStorage.getItem('authToken');
+    let authToken = localStorage.getItem('authToken');
     if(authToken) {
-        //if we have an authToken, that means we have already signed in. So we want to
-        //get our user info back.
-
         this.ngRedux.dispatch<any>(refreshStateWithToken(authToken));
     }
-
   }
 
   obtainAndRefreshTokenAndState(){
-
     let authToken = localStorage.getItem('authToken');
     if(authToken) {
-        //if we have an authToken, that means we have already signed in. So we want to
-        //get our user info back.
-
-        this.ngRedux.dispatch<any>(refreshStateWithToken(authToken));
-
-
-
-
-        this.user$.subscribe(user => {
-          console.log(user);
-          this.user = user
-          console.log(this.user);
-
-        });
-        console.log(this.user);
-
-        // const token = authToken;
-        // console.log(token);
-        // this.ngRedux.dispatch<any>(setAuthToken(token));
-        // // this.ngRedux.dispatch<any>(refreshAuthToken(this.storeTokenFromObservable));
-        this.ngRedux.dispatch<any>(refreshAuthToken(authToken, this.user))
-
+      this.ngRedux.dispatch<any>(refreshStateWithToken(authToken));
+      this.user$.subscribe(user => {
+        this.user = user
+      });
+      this.ngRedux.dispatch<any>(refreshAuthToken(authToken, this.user))
     }
   }
 
-
   addCatToDB(cat) {
     this.user$.subscribe(user => this.username = user.username);
-
-    console.log('addCatToDb runnung');
-    console.log(this.username);
-    console.log(cat);
-    // return this.http.post<any>(`${environment.API_BASE_URL}/api/users/addCat`, cat, this.httpOptions)
-    // .pipe(
-
-    // )
     return axios({
       url: `${environment.API_BASE_URL}/api/users/addCat`,
       method: "POST",
@@ -101,16 +61,10 @@ ngOnInit() {
         username: this.username
       }
     })
-    .then(response => {
-      console.log('fear tactic', response)
-    })
     .catch(err => console.error(err));
-
   }
 
   removeCatFromDB(catID) {
-    console.log('removeCatFromDB running yo', this.user.username, catID);
-    console.log('placeholder for Rmovecat fromd b');
     return axios({
       url: `${environment.API_BASE_URL}/api/users/removeCat`,
       method: "POST",
@@ -123,7 +77,6 @@ ngOnInit() {
       }
     })
     .then(response => {
-      console.log(response);
       this.refreshStateViaToken();
     })
     .catch(err => console.error(err));
@@ -131,7 +84,6 @@ ngOnInit() {
 
   attemptPasswordUpdate(username, object) {
     let {password, newPW} = object;
-    console.log(password, newPW)
     return axios({
       url: `${environment.API_BASE_URL}/api/users/changePassword`,
       method: "POST",
@@ -145,8 +97,6 @@ ngOnInit() {
       }
     })
     .then(response => {
-      console.log(response)
-      //TODO: if the responses code is 201 then we should fire a ui element saying the udpate worked
       if(response.data.code === 201) {
         this.toastService.show("Grab Dat Cat", "Password Change Successful!", {classname: 'bg-success text-light', delay: 5000});
       }
@@ -155,10 +105,8 @@ ngOnInit() {
   }
 
   attemptAccountUpdateDB(username, userInfo, confirmInfo) {
-    console.log('attemptAccountUpdateDB running');
     let { firstName, lastName, birthday, zodiacCombo } = userInfo;
     let {password, confirm} = confirmInfo;
-    console.log(username, userInfo, confirmInfo)
     return axios({
       url: `${environment.API_BASE_URL}/api/users/changeAccountDetails`,
       method: "POST",
@@ -171,7 +119,6 @@ ngOnInit() {
 
     })
     .then(response => {
-      console.log(response)
       if(response.data.code === 201) {
         this.toastService.show("Grab Dat Cat", "Account Update Successful!", {classname: 'bg-success text-light', delay: 5000});
         setTimeout(()=>{

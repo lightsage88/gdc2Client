@@ -19,7 +19,6 @@ export class KennelCardComponent implements OnInit {
   constructor(private dbService: DatabaseService, private toastService: AppToastService) { }
 
   ngOnInit() {
-    console.log('ngOnInit', this.catData)
     this.kittyMongoID = this.catData.petfinderid || String(this.catData.id)
     this.cardHeaderId = this.catData.id + "-heading";
     this.buttonDataTarget = "#" + this.catData.id + "-collapse"
@@ -28,7 +27,6 @@ export class KennelCardComponent implements OnInit {
   }
 
   removeCat(): void {
-    console.log('removeCat', this.kittyMongoID)
     this.dbService.removeCatFromDB(this.kittyMongoID)
     let toastBody = this.catData.name + " was removed.";
     this.toastService.show('Grab Dat Cat', toastBody, {classname: 'bg-danger text-light', delay: 5000});

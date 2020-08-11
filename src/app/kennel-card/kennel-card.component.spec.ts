@@ -1,15 +1,11 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-import { PetFinderService } from '../pet-finder.service';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 import { KennelCardComponent } from './kennel-card.component';
 import { KennelComponent } from '../kennel/kennel.component';
 import { NgReduxTestingModule } from '@angular-redux/store/testing';
 import { DatabaseService } from '../database.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {Router} from '@angular/router';
 
 describe('KennelCardComponent', () => {
   let component: KennelCardComponent;

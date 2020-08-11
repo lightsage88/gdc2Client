@@ -2,60 +2,47 @@
   <h2>Search</h2>
   <aside>Use the <strong>paw</strong>-er of the internet to find a <strong>furr</strong>-end!</aside>
 </div>
-
 <div class="container">
   <div>
-      <form (ngSubmit)="onSubmit()" [formGroup]="queryForm"  >
-      <h2>Coats</h2>
-      <select placeholder=" "  formControlName="coat">
-          <option value="">==ANY==</option>
-          <option *ngFor="let coat of catCoats | async" value={{coat}} >
-            {{coat}}
-          </option>
-        </select>
-
-      <h2>Gender</h2>
-      <select placeholder=" " formControlName="gender">
-          <option value="">==ANY==</option>
-          <option *ngFor="let gender of catGenders | async" value={{gender}}>
-            {{gender}}
-          </option>
-        </select>
-
-      <h2>Age</h2>
-      <select placeholder=" " formControlName="age">
-          <option value="">==ANY==</option>
-          <option *ngFor="let age of catAges " value={{age}}>
-            {{age}}
-          </option>
-        </select>
-
-
-
-      <h2>Breed</h2>
-      <select placeholder=" " formControlName="breed">
-          <option value="">==ANY==</option>
-        <option *ngFor="let breed of catBreeds | async" value={{breed}}>
-          {{breed}}
-        </option>
-      </select>
-
-
-      <aside>{{user.zodiacCombo.catType ? "According to our cat overlords, people with your zodiac sign would pair best with a " + user.zodiacCombo.catType + " cat!": "No cat suggestions available"}}</aside>
-
-
-      <h2>Color</h2>
-      <select formControlName="color">
+    <form (ngSubmit)="onSubmit()" [formGroup]="queryForm">
+    <h2>Coats</h2>
+    <select placeholder=" "  formControlName="coat">
         <option value="">==ANY==</option>
-        <option *ngFor="let color of catColors | async" value={{color}}>
-          {{color}}
+        <option *ngFor="let coat of catCoats | async" value={{coat}} >
+          {{coat}}
         </option>
       </select>
-      <button id="searchButton" class="btn btn-info" type="submit">SEEK</button>
-
-      </form>
-
-<app-cat-results [catResults]="catResults" ></app-cat-results>
-
-</div>
+    <h2>Gender</h2>
+    <select placeholder=" " formControlName="gender">
+        <option value="">==ANY==</option>
+        <option *ngFor="let gender of catGenders | async" value={{gender}}>
+          {{gender}}
+        </option>
+      </select>
+    <h2>Age</h2>
+    <select placeholder=" " formControlName="age">
+        <option value="">==ANY==</option>
+        <option *ngFor="let age of catAges " value={{age}}>
+          {{age}}
+        </option>
+      </select>
+    <h2>Breed</h2>
+    <select placeholder=" " formControlName="breed">
+        <option value="">==ANY==</option>
+      <option *ngFor="let breed of catBreeds | async" value={{breed}}>
+        {{breed}}
+      </option>
+    </select>
+    <aside>{{user.zodiacCombo.catType ? "According to our cat overlords, people with your zodiac sign would pair best with a " + user.zodiacCombo.catType + " cat!": "No cat suggestions available"}}</aside>
+    <h2>Color</h2>
+    <select formControlName="color">
+      <option value="">==ANY==</option>
+      <option *ngFor="let color of catColors | async" value={{color}}>
+        {{color}}
+      </option>
+    </select>
+    <button id="searchButton" class="btn btn-info" type="submit">SEEK</button>
+    </form>
+    <app-cat-results [catResults]="catResults" ></app-cat-results>
+  </div>
 </div>

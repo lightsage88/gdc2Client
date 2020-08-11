@@ -1,13 +1,11 @@
 #loginBanner {
   background: #2B4570;
   text-align: center;
-
 }
 
 #loginBanner h2 {
   font-family: "Leckerli One", cursive;
   color: #FB3640;
-
 }
 
 #loginBanner aside {
@@ -34,7 +32,6 @@
   margin: 8vw auto;
   padding: 5vw;
 }
-
 
 @media screen and (min-width: 426px) {
   #loginForm button {

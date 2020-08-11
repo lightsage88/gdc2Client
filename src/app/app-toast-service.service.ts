@@ -1,17 +1,16 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppToastService {
-  toasts: any[] = [];
+  toasts: any[] = []
   constructor() { }
 
   show(header:string, body: string, options: any={}) {
-    this.toasts.push({header, body, ...options});
+    this.toasts.push({header, body, ...options})
   }
-
   remove(toast) {
-    this.toasts = this.toasts.filter(t => t != toast);
+    this.toasts = this.toasts.filter(t => t != toast)
   }
 }

@@ -4,36 +4,35 @@
 </div>
 
 <form (ngSubmit)="onSubmit($event)" #signupForm="ngForm">
-    <div class="form-group">
-        <label id="usernameLabel">Username:
-          <input class="form-control" id="usernameInput"  placeholder="Enter your username" name="username" [(ngModel)]="model.username" type="text" required/>
-        </label>
-    </div>
-    <div class="form-group">
-        <label id="passwordLabel">Password:
-          <input class="form-control"  id="passwordInput" type="password" name="password" [(ngModel)]="model.password" placeholder="Enter your password" required/>
-        </label>
-    </div>
-    <div class="form-group">
-        <label id="retypePasswordLabel">Re-Type Password:
-          <input class="form-control" id="confirmInput" placeholder="Re-enter your password" type="password" name="passwordConfirm" [(ngModel)]="model.passwordConfirm" required/>
-        </label>
-    </div>
-    <div class="form-group">
-        <label id="firstNameLabel">First Name:
-          <input class="form-control"  id="firstNameInput" placeholder="Enter your first name" type="text" name="firstName" [(ngModel)]="model.firstName"  required />
-        </label>
-    </div>
-    <div class="form-group">
-        <label id="lastNameLabel">Last Name:
-          <input class="form-control" id="lastNameInput"  placeholder="Enter your last name" type="text" name="lastName" [(ngModel)]="model.lastName"  required />
-        </label>
-    </div>
-    <div class="form-group">
-        <label id="birthdayLabel">Birthday:
-          <input class="form-control" id="birthdayInput" required (click)="d.toggle()" placeholder="When's your birthday?" type="text" [(ngModel)]="model.birthday" ngbDatepicker #d="ngbDatepicker"  name="birthday">
-        </label>
-    </div>
+  <div class="form-group">
+    <label id="usernameLabel">Username:
+      <input class="form-control" id="usernameInput"  placeholder="Enter your username" name="username" [(ngModel)]="model.username" type="text" required/>
+    </label>
+  </div>
+  <div class="form-group">
+    <label id="passwordLabel">Password:
+      <input class="form-control"  id="passwordInput" type="password" name="password" [(ngModel)]="model.password" placeholder="Enter your password" required/>
+    </label>
+  </div>
+  <div class="form-group">
+    <label id="retypePasswordLabel">Re-Type Password:
+      <input class="form-control" id="confirmInput" placeholder="Re-enter your password" type="password" name="passwordConfirm" [(ngModel)]="model.passwordConfirm" required/>
+    </label>
+  </div>
+  <div class="form-group">
+    <label id="firstNameLabel">First Name:
+      <input class="form-control"  id="firstNameInput" placeholder="Enter your first name" type="text" name="firstName" [(ngModel)]="model.firstName"  required />
+    </label>
+  </div>
+  <div class="form-group">
+    <label id="lastNameLabel">Last Name:
+      <input class="form-control" id="lastNameInput"  placeholder="Enter your last name" type="text" name="lastName" [(ngModel)]="model.lastName"  required />
+    </label>
+  </div>
+  <div class="form-group">
+    <label id="birthdayLabel">Birthday:
+      <input class="form-control" id="birthdayInput" required (click)="d.toggle()" placeholder="When's your birthday?" type="text" [(ngModel)]="model.birthday" ngbDatepicker #d="ngbDatepicker"  name="birthday">
+    </label>
+  </div>
   <button  class="btn btn-primary" id="signupSubmitButton" type="submit" (click)="onSubmit($event)">SIGNUP & LOGIN</button>
-  <!-- <ngb-datepicker #d></ngb-datepicker> -->
 </form>
